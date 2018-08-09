@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  year: 2018-08-09
+  medium: MyString
+  price: 1
+  description: MyText
+  collection: MyString
+  location: MyString
+  height: 1
+  width: 1
+  depth: 1
+  sold: false
+  notes: MyText
+
+two:
+  title: MyString
+  year: 2018-08-09
+  medium: MyString
+  price: 1
+  description: MyText
+  collection: MyString
+  location: MyString
+  height: 1
+  width: 1
+  depth: 1
+  sold: false
+  notes: MyText
