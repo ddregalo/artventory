@@ -1,5 +1,13 @@
 <body>
 	<h1>YOOOOO</h1>
-    <p>Find me in app/views/artworks/index.html.erb</h1>
+  <p>Find me in app/views/artworks/index.html.erb</h1>
+  <% @artworks.each do |artwork| %>
+    </br>
+    <div >
+        <%= artwork.title %>
+    </div>
+    <div >
+      <%= artwork.price %>
+    </div>
+  <% end %>
 </body>
-
