@@ -12167,3 +12167,225 @@ Processing by ArtworksController#index as HTML
 Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/artworks" for 127.0.0.1 at 2018-08-11 00:02:02 +0100
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 5257ms (Views: 5231.7ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-11 00:02:17 +0100
+Processing by ArtworksController#new as HTML
+  Rendering artworks/new.html.erb within layouts/application
+  Rendered artworks/new.html.erb within layouts/application (38.2ms)
+Completed 200 OK in 82ms (Views: 74.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/artworks" for 127.0.0.1 at 2018-08-11 00:02:21 +0100
+Processing by ArtworksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8/hA0SIKfX+npfE6cdpGH/qsSCqv/eBtAjO7ef3c8EOz9af7cpYUwVBem1NDEUtT06WjRiZVkNl2SC33DOQQ9g==", "artwork"=>{"title"=>"a", "price"=>"4", "sold"=>"0"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:11
+  [1m[36mArtwork Create (0.9ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "price", "sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "a"], ["price", 4], ["sold", false], ["created_at", "2018-08-10 23:02:21.933837"], ["updated_at", "2018-08-10 23:02:21.933837"]]
+  ↳ app/controllers/artworks_controller.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:11
+Redirected to http://localhost:3000/artworks
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-11 00:02:21 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.7ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 50ms (Views: 47.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/artworks/edit.7" for 127.0.0.1 at 2018-08-11 00:02:24 +0100
+Processing by ArtworksController#edit as 
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:17
+  Rendering artworks/edit.html.erb within layouts/application
+  Rendered artworks/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 109ms (Views: 74.3ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/artworks/7" for 127.0.0.1 at 2018-08-11 00:02:27 +0100
+Processing by ArtworksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GedKpPUT4xVP2HdSDi6M5TH1dYwoXeSz1da+W/RAfOjW4SLJPfN8MJbDl7U3M/1zmJ0s9nW3OH+eGjSQK5QcAw==", "title"=>"ab", "price"=>"4", "commit"=>"byee", "id"=>"7"}
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:22
+  [1m[36mArtwork Update (0.5ms)[0m  [1m[33mUPDATE "artworks" SET "title" = $1, "sold" = $2, "updated_at" = $3 WHERE "artworks"."id" = $4[0m  [["title", "ab"], ["sold", nil], ["updated_at", "2018-08-10 23:02:27.639465"], ["id", 7]]
+  ↳ app/controllers/artworks_controller.rb:22
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:22
+Redirected to http://localhost:3000/artworks
+Completed 302 Found in 9ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-11 00:02:27 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 42ms (Views: 38.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-11 00:05:58 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (49.9ms)
+Completed 200 OK in 356ms (Views: 330.7ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/artworks/delete.3" for 127.0.0.1 at 2018-08-11 00:06:02 +0100
+Processing by ArtworksController#delete as 
+  [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:31
+  [1m[36mArtwork Destroy (0.9ms)[0m  [1m[31mDELETE FROM "artworks" WHERE "artworks"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/artworks_controller.rb:31
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:31
+Redirected to http://localhost:3000/artworks
+Completed 302 Found in 11ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-11 00:06:02 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 53ms (Views: 49.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/artworks/delete.5" for 127.0.0.1 at 2018-08-11 00:06:08 +0100
+Processing by ArtworksController#delete as 
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:31
+  [1m[36mArtwork Destroy (0.3ms)[0m  [1m[31mDELETE FROM "artworks" WHERE "artworks"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/artworks_controller.rb:31
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:31
+Redirected to http://localhost:3000/artworks
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-11 00:06:08 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.9ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 34ms (Views: 31.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/artworks/delete.2" for 127.0.0.1 at 2018-08-11 00:06:10 +0100
+Processing by ArtworksController#delete as 
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:31
+  [1m[36mArtwork Destroy (0.5ms)[0m  [1m[31mDELETE FROM "artworks" WHERE "artworks"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/artworks_controller.rb:31
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:31
+Redirected to http://localhost:3000/artworks
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-11 00:06:10 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/artworks/delete.1" for 127.0.0.1 at 2018-08-11 00:06:11 +0100
+Processing by ArtworksController#delete as 
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:31
+  [1m[36mArtwork Destroy (0.4ms)[0m  [1m[31mDELETE FROM "artworks" WHERE "artworks"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/artworks_controller.rb:31
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:31
+Redirected to http://localhost:3000/artworks
+Completed 302 Found in 6ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-11 00:06:11 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/artworks/delete.4" for 127.0.0.1 at 2018-08-11 00:06:12 +0100
+Processing by ArtworksController#delete as 
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:31
+  [1m[36mArtwork Destroy (0.3ms)[0m  [1m[31mDELETE FROM "artworks" WHERE "artworks"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/artworks_controller.rb:31
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:31
+Redirected to http://localhost:3000/artworks
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-11 00:06:12 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 34ms (Views: 30.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/artworks/delete.6" for 127.0.0.1 at 2018-08-11 00:06:14 +0100
+Processing by ArtworksController#delete as 
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:31
+  [1m[36mArtwork Destroy (0.4ms)[0m  [1m[31mDELETE FROM "artworks" WHERE "artworks"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/artworks_controller.rb:31
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:31
+Redirected to http://localhost:3000/artworks
+Completed 302 Found in 5ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-11 00:06:14 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 0.4ms)
+
+

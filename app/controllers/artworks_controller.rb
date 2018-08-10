@@ -13,7 +13,6 @@ class ArtworksController < ApplicationController
   end
 
   def edit
-    puts "Whats UP #{params[:format]}"
     @artwork = Artwork.find(params[:format])
   end
 
@@ -24,6 +23,12 @@ class ArtworksController < ApplicationController
       price: params[:price],
       sold: params[:sold],
     )
+    redirect_to artworks_path
+  end
+
+  def delete
+    @artwork = Artwork.find(params[:format])
+    @artwork.destroy
     redirect_to artworks_path
   end
 
