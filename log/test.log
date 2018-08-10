@@ -1,0 +1,443 @@
+  [1m[35m (165.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "artventory_test"[0m
+  [1m[35m (440.9ms)[0m  [1m[35mCREATE DATABASE "artventory_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "artworks" CASCADE[0m
+  [1m[35m (17.6ms)[0m  [1m[35mCREATE TABLE "artworks" ("id" bigserial primary key, "title" character varying, "year" date, "medium" character varying, "price" integer, "description" text, "collection" character varying, "location" character varying, "height" integer, "width" integer, "depth" integer, "sold" boolean, "notes" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180809223729)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2018-08-10 20:30:06.309903"], ["updated_at", "2018-08-10 20:30:06.309903"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.7ms)[0m  [1m[35mALTER TABLE "artworks" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (4.8ms)[0m  [1m[31mDELETE FROM "artworks";
+INSERT INTO "artworks" ("id", "title", "year", "medium", "price", "description", "collection", "location", "height", "width", "depth", "sold", "notes", "created_at", "updated_at") VALUES (980190962, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:30:06.458551', '2018-08-10 20:30:06.458551'), (298486374, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:30:06.458551', '2018-08-10 20:30:06.458551')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "artworks" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+ArtworksControllerTest: test_should_get_index
+---------------------------------------------
+Started GET "/artworks/index" for 127.0.0.1 at 2018-08-10 21:30:06 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  Rendered artworks/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "artworks" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "artworks";
+INSERT INTO "artworks" ("id", "title", "year", "medium", "price", "description", "collection", "location", "height", "width", "depth", "sold", "notes", "created_at", "updated_at") VALUES (980190962, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:30:31.794659', '2018-08-10 20:30:31.794659'), (298486374, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:30:31.794659', '2018-08-10 20:30:31.794659')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "artworks" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+ArtworksControllerTest: test_should_get_index
+---------------------------------------------
+Started GET "/artworks/index" for 127.0.0.1 at 2018-08-10 21:30:31 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  Rendered artworks/index.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "artworks" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.9ms)[0m  [1m[31mDELETE FROM "artworks";
+INSERT INTO "artworks" ("id", "title", "year", "medium", "price", "description", "collection", "location", "height", "width", "depth", "sold", "notes", "created_at", "updated_at") VALUES (980190962, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:31:43.362289', '2018-08-10 20:31:43.362289'), (298486374, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:31:43.362289', '2018-08-10 20:31:43.362289')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "artworks" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+ArtworksControllerTest: test_should_get_index
+---------------------------------------------
+Started GET "/artworks/index" for 127.0.0.1 at 2018-08-10 21:31:43 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  Rendered artworks/index.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "artworks" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "artworks";
+INSERT INTO "artworks" ("id", "title", "year", "medium", "price", "description", "collection", "location", "height", "width", "depth", "sold", "notes", "created_at", "updated_at") VALUES (980190962, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:37:14.772146', '2018-08-10 20:37:14.772146'), (298486374, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:37:14.772146', '2018-08-10 20:37:14.772146')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "artworks" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+ArtworksControllerTest: test_should_get_index
+---------------------------------------------
+Started GET "/artworks/index" for 127.0.0.1 at 2018-08-10 21:37:14 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered artworks/index.html.erb within layouts/application (66.7ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "artworks" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "artworks";
+INSERT INTO "artworks" ("id", "title", "year", "medium", "price", "description", "collection", "location", "height", "width", "depth", "sold", "notes", "created_at", "updated_at") VALUES (980190962, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:38:19.299950', '2018-08-10 20:38:19.299950'), (298486374, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:38:19.299950', '2018-08-10 20:38:19.299950')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "artworks" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+ArtworksControllerTest: test_should_get_index
+---------------------------------------------
+Started GET "/artworks/index" for 127.0.0.1 at 2018-08-10 21:38:19 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered artworks/index.html.erb within layouts/application (74.9ms)
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 1.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "artworks" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "artworks";
+INSERT INTO "artworks" ("id", "title", "year", "medium", "price", "description", "collection", "location", "height", "width", "depth", "sold", "notes", "created_at", "updated_at") VALUES (980190962, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:39:06.982299', '2018-08-10 20:39:06.982299'), (298486374, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:39:06.982299', '2018-08-10 20:39:06.982299')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "artworks" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+ArtworksControllerTest: test_should_get_index
+---------------------------------------------
+Started GET "/artworks/index" for 127.0.0.1 at 2018-08-10 21:39:07 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.8ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered artworks/index.html.erb within layouts/application (103.8ms)
+Completed 500 Internal Server Error in 120ms (ActiveRecord: 1.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "artworks" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "artworks";
+INSERT INTO "artworks" ("id", "title", "year", "medium", "price", "description", "collection", "location", "height", "width", "depth", "sold", "notes", "created_at", "updated_at") VALUES (980190962, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:41:03.770798', '2018-08-10 20:41:03.770798'), (298486374, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:41:03.770798', '2018-08-10 20:41:03.770798')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "artworks" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+ArtworksControllerTest: test_should_get_index
+---------------------------------------------
+Started GET "/artworks/index" for 127.0.0.1 at 2018-08-10 21:41:03 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered artworks/index.html.erb within layouts/application (73.8ms)
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "artworks" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "artworks";
+INSERT INTO "artworks" ("id", "title", "year", "medium", "price", "description", "collection", "location", "height", "width", "depth", "sold", "notes", "created_at", "updated_at") VALUES (980190962, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:44:36.279566', '2018-08-10 20:44:36.279566'), (298486374, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:44:36.279566', '2018-08-10 20:44:36.279566')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "artworks" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+ArtworksControllerTest: test_should_get_index
+---------------------------------------------
+Started GET "/artworks/index" for 127.0.0.1 at 2018-08-10 21:44:36 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered artworks/index.html.erb within layouts/application (67.8ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "artworks" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "artworks";
+INSERT INTO "artworks" ("id", "title", "year", "medium", "price", "description", "collection", "location", "height", "width", "depth", "sold", "notes", "created_at", "updated_at") VALUES (980190962, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:45:07.852772', '2018-08-10 20:45:07.852772'), (298486374, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:45:07.852772', '2018-08-10 20:45:07.852772')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "artworks" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+ArtworksControllerTest: test_should_get_index
+---------------------------------------------
+Started GET "/artworks/index" for 127.0.0.1 at 2018-08-10 21:45:07 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  Rendered artworks/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 4898ms (Views: 4888.0ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "artworks" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "artworks";
+INSERT INTO "artworks" ("id", "title", "year", "medium", "price", "description", "collection", "location", "height", "width", "depth", "sold", "notes", "created_at", "updated_at") VALUES (980190962, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:45:25.360764', '2018-08-10 20:45:25.360764'), (298486374, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:45:25.360764', '2018-08-10 20:45:25.360764')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "artworks" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+ArtworksControllerTest: test_should_get_index
+---------------------------------------------
+Started GET "/artworks/index" for 127.0.0.1 at 2018-08-10 21:45:25 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  Rendered artworks/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 231ms (Views: 221.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "artworks" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "artworks";
+INSERT INTO "artworks" ("id", "title", "year", "medium", "price", "description", "collection", "location", "height", "width", "depth", "sold", "notes", "created_at", "updated_at") VALUES (980190962, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:46:04.934343', '2018-08-10 20:46:04.934343'), (298486374, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:46:04.934343', '2018-08-10 20:46:04.934343')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "artworks" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+ArtworksControllerTest: test_should_get_index
+---------------------------------------------
+Started GET "/artworks/index" for 127.0.0.1 at 2018-08-10 21:46:05 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  Rendered artworks/index.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 264ms (Views: 252.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "artworks" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "artworks";
+INSERT INTO "artworks" ("id", "title", "year", "medium", "price", "description", "collection", "location", "height", "width", "depth", "sold", "notes", "created_at", "updated_at") VALUES (980190962, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:46:28.011013', '2018-08-10 20:46:28.011013'), (298486374, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:46:28.011013', '2018-08-10 20:46:28.011013')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "artworks" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+ArtworksControllerTest: test_should_get_index
+---------------------------------------------
+Started GET "/artworks/index" for 127.0.0.1 at 2018-08-10 21:46:28 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  Rendered artworks/index.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 239ms (Views: 228.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "artworks" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "artworks";
+INSERT INTO "artworks" ("id", "title", "year", "medium", "price", "description", "collection", "location", "height", "width", "depth", "sold", "notes", "created_at", "updated_at") VALUES (980190962, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:46:48.259998', '2018-08-10 20:46:48.259998'), (298486374, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:46:48.259998', '2018-08-10 20:46:48.259998')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "artworks" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+ArtworksControllerTest: test_should_get_index
+---------------------------------------------
+Started GET "/artworks/index" for 127.0.0.1 at 2018-08-10 21:46:48 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  Rendered artworks/index.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 233ms (Views: 222.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "artworks" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "artworks";
+INSERT INTO "artworks" ("id", "title", "year", "medium", "price", "description", "collection", "location", "height", "width", "depth", "sold", "notes", "created_at", "updated_at") VALUES (980190962, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:46:59.580684', '2018-08-10 20:46:59.580684'), (298486374, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:46:59.580684', '2018-08-10 20:46:59.580684')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "artworks" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+ArtworksControllerTest: test_should_get_index
+---------------------------------------------
+Started GET "/artworks/index" for 127.0.0.1 at 2018-08-10 21:46:59 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered artworks/index.html.erb within layouts/application (64.0ms)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "artworks" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "artworks";
+INSERT INTO "artworks" ("id", "title", "year", "medium", "price", "description", "collection", "location", "height", "width", "depth", "sold", "notes", "created_at", "updated_at") VALUES (980190962, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:47:13.140196', '2018-08-10 20:47:13.140196'), (298486374, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:47:13.140196', '2018-08-10 20:47:13.140196')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "artworks" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+ArtworksControllerTest: test_should_get_index
+---------------------------------------------
+Started GET "/artworks/index" for 127.0.0.1 at 2018-08-10 21:47:13 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.2ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered artworks/index.html.erb within layouts/application (65.9ms)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "artworks" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "artworks";
+INSERT INTO "artworks" ("id", "title", "year", "medium", "price", "description", "collection", "location", "height", "width", "depth", "sold", "notes", "created_at", "updated_at") VALUES (980190962, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:47:43.764333', '2018-08-10 20:47:43.764333'), (298486374, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:47:43.764333', '2018-08-10 20:47:43.764333')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "artworks" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+ArtworksControllerTest: test_should_get_index
+---------------------------------------------
+Started GET "/artworks/index" for 127.0.0.1 at 2018-08-10 21:47:43 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Artwork Load (0.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered artworks/index.html.erb within layouts/application (69.5ms)
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "artworks" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "artworks";
+INSERT INTO "artworks" ("id", "title", "year", "medium", "price", "description", "collection", "location", "height", "width", "depth", "sold", "notes", "created_at", "updated_at") VALUES (980190962, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:47:51.814960', '2018-08-10 20:47:51.814960'), (298486374, 'MyString', '2018-08-09', 'MyString', 1, 'MyText', 'MyString', 'MyString', 1, 1, 1, FALSE, 'MyText', '2018-08-10 20:47:51.814960', '2018-08-10 20:47:51.814960')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "artworks" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+ArtworksControllerTest: test_should_get_index
+---------------------------------------------
+Started GET "/artworks/index" for 127.0.0.1 at 2018-08-10 21:47:51 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  Rendered artworks/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 250ms (Views: 239.7ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m

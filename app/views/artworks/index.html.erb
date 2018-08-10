@@ -1,13 +1,27 @@
-<body>
-	<h1>YOOOOO</h1>
-  <p>Find me in app/views/artworks/index.html.erb</h1>
-  <% @artworks.each do |artwork| %>
-    </br>
-    <div >
-        <%= artwork.title %>
-    </div>
-    <div >
-      <%= artwork.price %>
-    </div>
-  <% end %>
-</body>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Artventory</title>
+	</head>
+	<body>
+		<h1>Artventory V0.0.0.0.0.1a</h1>
+
+		<%= link_to artworks_new_path do %>
+			<h2>New Artwork</h2>
+		<% end %>
+
+
+
+	  <p>Database entries go here:</h1>
+	  <% @artworks.each do |artwork| %>
+	    </br>
+	    <div >
+	        <%= artwork.title %>
+	    </div>
+	    <div >
+	      <%= artwork.price %>
+	    </div>
+	  <% end %>
+	</body>
+</html>

@@ -3,8 +3,17 @@ class ArtworksController < ApplicationController
     @artworks = Artwork.all
   end
 
+  def new
+    @artwork = Artwork.new
+  end
+
   def create
-    @artwork = artworks.create(artwork_params)
+    @artwork = Artwork.create(artwork_params)
     redirect_to artworks_path
+  end
+
+  private
+  def artwork_params
+    params.require(:artwork).permit(:title,:price,:sold)
   end
 end

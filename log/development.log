@@ -300,3 +300,454 @@ Migrating to CreateArtworks (20180809223729)
   ↳ bin/rails:4
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:4
+Started GET "/" for 127.0.0.1 at 2018-08-10 21:54:14 +0100
+  
+PG::ConnectionBad (could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+):
+  
+pg (1.0.0) lib/pg.rb:56:in `initialize'
+pg (1.0.0) lib/pg.rb:56:in `new'
+pg (1.0.0) lib/pg.rb:56:in `connect'
+activerecord (5.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:684:in `connect'
+activerecord (5.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:215:in `initialize'
+activerecord (5.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:40:in `new'
+activerecord (5.2.1) lib/active_record/connection_adapters/postgresql_adapter.rb:40:in `postgresql_connection'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:809:in `new_connection'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `checkout_new_connection'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:832:in `try_to_checkout_new_connection'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:793:in `acquire_connection'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:521:in `checkout'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:380:in `connection'
+activerecord (5.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:1008:in `retrieve_connection'
+activerecord (5.2.1) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.1) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.1) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-08-10 21:55:45 +0100
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (1.9ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 4549ms (Views: 4530.8ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 21:55:59 +0100
+Processing by ArtworksController#new as HTML
+  Rendering artworks/new.html.erb within layouts/application
+  Rendered artworks/new.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     6:   </head>
+     7:   <body>
+     8:     <h1> Form: </h1>
+     9:     		<%= bootstrap_form_for(@artwork) do |form| %>
+    10:     			<%= form.title_field :text %>
+    11:     			<%= form.price_field :number %>
+    12:     			<%= form.sold_checkbox :checkbox %>
+  
+app/views/artworks/new.html.erb:9:in `_app_views_artworks_new_html_erb__4601347353458804694_70304665068020'
+Started GET "/" for 127.0.0.1 at 2018-08-10 21:56:04 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 48ms (Views: 44.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 21:56:06 +0100
+Processing by ArtworksController#new as HTML
+  Rendering artworks/new.html.erb within layouts/application
+  Rendered artworks/new.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     6:   </head>
+     7:   <body>
+     8:     <h1> Form: </h1>
+     9:     		<%= bootstrap_form_for(@artwork) do |form| %>
+    10:     			<%= form.title_field :text %>
+    11:     			<%= form.price_field :number %>
+    12:     			<%= form.sold_checkbox :checkbox %>
+  
+app/views/artworks/new.html.erb:9:in `_app_views_artworks_new_html_erb__4601347353458804694_70304684935140'
+Started GET "/" for 127.0.0.1 at 2018-08-10 21:56:09 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 58ms (Views: 53.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 21:56:10 +0100
+Processing by ArtworksController#new as HTML
+  Rendering artworks/new.html.erb within layouts/application
+  Rendered artworks/new.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     6:   </head>
+     7:   <body>
+     8:     <h1> Form: </h1>
+     9:     		<%= bootstrap_form_for(@artwork) do |form| %>
+    10:     			<%= form.title_field :text %>
+    11:     			<%= form.price_field :number %>
+    12:     			<%= form.sold_checkbox :checkbox %>
+  
+app/views/artworks/new.html.erb:9:in `_app_views_artworks_new_html_erb__4601347353458804694_70304666755700'
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 21:58:11 +0100
+Processing by ArtworksController#new as HTML
+Completed 500 Internal Server Error in 261ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `artworks' for #<ArtworksController:0x00007fe2292bc1f0>):
+  
+app/controllers/artworks_controller.rb:7:in `new'
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 21:59:25 +0100
+Processing by ArtworksController#new as HTML
+Completed 500 Internal Server Error in 272ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `artwork' for #<ArtworksController:0x00007fe22b41ee10>):
+  
+app/controllers/artworks_controller.rb:7:in `new'
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 21:59:56 +0100
+Processing by ArtworksController#new as HTML
+Completed 500 Internal Server Error in 240ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `artworks' for #<ArtworksController:0x00007fe22ac80708>):
+  
+app/controllers/artworks_controller.rb:7:in `new'
+Started GET "/" for 127.0.0.1 at 2018-08-10 22:02:24 +0100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 420ms (Views: 397.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 22:02:26 +0100
+Processing by ArtworksController#new as HTML
+Completed 500 Internal Server Error in 242ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `artworks' for #<ArtworksController:0x00007fe260c1e1a8>
+Did you mean?  artworks_url):
+  
+app/controllers/artworks_controller.rb:7:in `new'
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 22:05:26 +0100
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+  
+SyntaxError (/Users/guy/artventory/app/controllers/artworks_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/artworks_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 22:05:38 +0100
+Processing by ArtworksController#new as HTML
+Completed 500 Internal Server Error in 241ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `artworks' for #<ArtworksController:0x00007fde4bd846a0>
+Did you mean?  artworks_url):
+  
+app/controllers/artworks_controller.rb:7:in `new'
+Started GET "/" for 127.0.0.1 at 2018-08-10 22:05:57 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (2.8ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 373ms (Views: 351.2ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 22:05:58 +0100
+Processing by ArtworksController#new as HTML
+Completed 500 Internal Server Error in 234ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `artworks' for #<ArtworksController:0x00007fbacb9c4c48>
+Did you mean?  artworks_url):
+  
+app/controllers/artworks_controller.rb:7:in `new'
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 22:08:41 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#new as HTML
+  Rendering artworks/new.html.erb within layouts/application
+  Rendered artworks/new.html.erb within layouts/application (214.4ms)
+Completed 500 Internal Server Error in 278ms (ActiveRecord: 12.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `title_field' for #<BootstrapForm::FormBuilder:0x00007fc7ba929dc8>
+Did you mean?  time_field
+               file_field
+               date_field):
+     7:   <body>
+     8:     <h1> Form: </h1>
+     9:     		<%= bootstrap_form_for(@artwork) do |form| %>
+    10:     			<%= form.title_field :text %>
+    11:     			<%= form.price_field :number %>
+    12:     			<%= form.sold_checkbox :checkbox %>
+    13:     		<% end %>
+  
+app/views/artworks/new.html.erb:10:in `block in _app_views_artworks_new_html_erb__3792724369357080471_70247909107620'
+app/views/artworks/new.html.erb:9:in `_app_views_artworks_new_html_erb__3792724369357080471_70247909107620'
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 22:10:13 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#new as HTML
+  Rendering artworks/new.html.erb within layouts/application
+  Rendered artworks/new.html.erb within layouts/application (261.8ms)
+Completed 500 Internal Server Error in 321ms (ActiveRecord: 5.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `checkbox_field' for #<BootstrapForm::FormBuilder:0x00007f93d533d518>
+Did you mean?  check_box):
+     9:     		<%= bootstrap_form_for(@artwork) do |form| %>
+    10:     			<%= form.text_field :title %>
+    11:     			<%= form.number_field :price %>
+    12:     			<%= form.checkbox_field :sold %>
+    13:     		<% end %>
+    14:   </body>
+    15: </html>
+  
+app/views/artworks/new.html.erb:12:in `block in _app_views_artworks_new_html_erb__3754298103604931938_70136460098620'
+app/views/artworks/new.html.erb:9:in `_app_views_artworks_new_html_erb__3754298103604931938_70136460098620'
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 22:10:23 +0100
+Processing by ArtworksController#new as HTML
+  Rendering artworks/new.html.erb within layouts/application
+  Rendered artworks/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 328ms (Views: 325.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 22:11:16 +0100
+Processing by ArtworksController#new as HTML
+  Rendering artworks/new.html.erb within layouts/application
+  Rendered artworks/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 45ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/artworks" for 127.0.0.1 at 2018-08-10 22:11:22 +0100
+Processing by ArtworksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w6wpJxphu1asmfQIDSiLYrrRkXQCgr1Z8SW3L/qWDQkMqkFK0oEkc3WCFO80Nfr0E7nIDl9oYZW66T3kJUJt4g==", "artwork"=>{"title"=>"Asaa", "price"=>"9999", "sold"=>"1"}, "commit"=>"Submit"}
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `artworks' for #<ArtworksController:0x00007f93d9a90e38>
+Did you mean?  artworks_url):
+  
+app/controllers/artworks_controller.rb:11:in `create'
+Started GET "/artworks" for 127.0.0.1 at 2018-08-10 22:11:47 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (1.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 89ms (Views: 78.9ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-10 22:12:02 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 344ms (Views: 323.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 22:12:04 +0100
+Processing by ArtworksController#new as HTML
+  Rendering artworks/new.html.erb within layouts/application
+  Rendered artworks/new.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 111ms (Views: 73.3ms | ActiveRecord: 7.3ms)
+
+
+Started POST "/artworks" for 127.0.0.1 at 2018-08-10 22:12:10 +0100
+Processing by ArtworksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wN2hj+hC/aVbAMPBtnRYzl9c9J73ca3H0TPxKRv0ROaA0EaluN6UG6z7qaiEv1WCdlUf8n7Z3XOlSGen6sykUw==", "artwork"=>{"title"=>"hello", "price"=>"9999", "sold"=>"1"}, "commit"=>"Submit"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant ArtworksController::Artworks):
+  
+app/controllers/artworks_controller.rb:11:in `create'
+Started GET "/artworks" for 127.0.0.1 at 2018-08-10 22:13:18 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 345ms (Views: 329.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 22:13:21 +0100
+Processing by ArtworksController#new as HTML
+  Rendering artworks/new.html.erb within layouts/application
+  Rendered artworks/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 100ms (Views: 59.5ms | ActiveRecord: 8.7ms)
+
+
+Started POST "/artworks" for 127.0.0.1 at 2018-08-10 22:13:25 +0100
+Processing by ArtworksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AVjpJP1bkPUYkl6Sfz9A8f7RxhaXiIk6qDBCbQC5zwZBVQ4Orcf5S+9pNPtN9E2919gteh4g+Y7cS9Tj8YEvsw==", "artwork"=>{"title"=>"test", "price"=>"99", "sold"=>"1"}, "commit"=>"Submit"}
+Unpermitted parameters: :title, :price, :sold
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:11
+  [1m[36mArtwork Create (8.9ms)[0m  [1m[32mINSERT INTO "artworks" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-08-10 21:13:25.885602"], ["updated_at", "2018-08-10 21:13:25.885602"]]
+  ↳ app/controllers/artworks_controller.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:11
+Redirected to http://localhost:3000/artworks
+Completed 302 Found in 17ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-10 22:13:25 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 35ms (Views: 31.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-10 22:13:28 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 37ms (Views: 33.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-10 22:15:57 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (1.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (54.7ms)
+Completed 200 OK in 394ms (Views: 364.6ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 22:15:59 +0100
+Processing by ArtworksController#new as HTML
+  Rendering artworks/new.html.erb within layouts/application
+  Rendered artworks/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 63ms (Views: 58.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/artworks" for 127.0.0.1 at 2018-08-10 22:16:04 +0100
+Processing by ArtworksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"alNoS30qLGopGvBtksYPoUAb7ZHJWjdsF8UrdQfGaMkqXo9hLbZF1N7hmgSgDQLtaRIG/UDyR9hjvr379v6IfA==", "artwork"=>{"title"=>"aeet", "price"=>"3", "sold"=>"1"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:11
+  [1m[36mArtwork Create (1.9ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "price", "sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "aeet"], ["price", 3], ["sold", true], ["created_at", "2018-08-10 21:16:04.125127"], ["updated_at", "2018-08-10 21:16:04.125127"]]
+  ↳ app/controllers/artworks_controller.rb:11
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:11
+Redirected to http://localhost:3000/artworks
+Completed 302 Found in 9ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-10 22:16:04 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (1.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 55ms (Views: 50.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 22:16:12 +0100
+Processing by ArtworksController#new as HTML
+  Rendering artworks/new.html.erb within layouts/application
+  Rendered artworks/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 53ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/artworks" for 127.0.0.1 at 2018-08-10 22:16:17 +0100
+Processing by ArtworksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QIR9q7mSVhAwssiPIXVT/FYbyQpeulIpRqKX7p7m2zAAiZqB6Q4/rsdJouYTvl6wfxIiZtcSIp0y2QFgb947hQ==", "artwork"=>{"title"=>"yoo", "price"=>"88", "sold"=>"0"}, "commit"=>"Submit"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:11
+  [1m[36mArtwork Create (0.6ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "price", "sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "yoo"], ["price", 88], ["sold", false], ["created_at", "2018-08-10 21:16:17.803726"], ["updated_at", "2018-08-10 21:16:17.803726"]]
+  ↳ app/controllers/artworks_controller.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:11
+Redirected to http://localhost:3000/artworks
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-10 22:16:17 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (1.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 54ms (Views: 50.8ms | ActiveRecord: 1.3ms)
+
+

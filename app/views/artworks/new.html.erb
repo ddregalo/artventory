@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1> Form: </h1>
+    		<%= bootstrap_form_for(@artwork) do |form| %>
+    			<%= form.text_field :title %>
+    			<%= form.number_field :price %>
+    			<%= form.check_box :sold %>
+          <%= form.submit "Submit" %>
+    		<% end %>
+  </body>
+</html>
