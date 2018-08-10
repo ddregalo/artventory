@@ -13,8 +13,8 @@ class ArtworksController < ApplicationController
   end
 
   def edit
-    puts "Paramsssss---------:   " + params[:id]
-    @artwork = Artwork.find(params[:id])
+    puts "Whats UP #{params[:format]}"
+    @artwork = Artwork.find(params[:format])
   end
 
   def update

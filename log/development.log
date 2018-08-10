@@ -11494,3 +11494,676 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-08-10 23:14:00 +0100
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (1.0ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (61.2ms)
+Completed 200 OK in 428ms (Views: 403.4ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/artworks/edit.2" for 127.0.0.1 at 2018-08-10 23:14:05 +0100
+Processing by ArtworksController#edit as 
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/artworks_controller.rb:16:in `+'
+app/controllers/artworks_controller.rb:16:in `edit'
+Started GET "/artworks/edit.2" for 127.0.0.1 at 2018-08-10 23:14:27 +0100
+Processing by ArtworksController#edit as 
+Completed 404 Not Found in 12ms (ActiveRecord: 6.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artwork without an ID):
+  
+app/controllers/artworks_controller.rb:17:in `edit'
+Started GET "/artworks/edit.2" for 127.0.0.1 at 2018-08-10 23:14:43 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#edit as 
+Completed 404 Not Found in 23ms (ActiveRecord: 8.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artwork without an ID):
+  
+app/controllers/artworks_controller.rb:17:in `edit'
+Started GET "/artworks/edit.2" for 127.0.0.1 at 2018-08-10 23:15:57 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#edit as 
+  [1m[36mArtwork Load (1.0ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:17
+  Rendering artworks/edit.html.erb within layouts/application
+  Rendered artworks/edit.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 145ms (ActiveRecord: 7.3ms)
+
+
+  
+SyntaxError (/Users/guy/artventory/app/views/artworks/edit.html.erb:9: syntax error, unexpected tLABEL
+...rap_form_for(@artwork), method: "put" do |form| @output_buff...
+...                        ^~~~~~~
+/Users/guy/artventory/app/views/artworks/edit.html.erb:9: syntax error, unexpected keyword_do_block, expecting keyword_end
+...for(@artwork), method: "put" do |form| @output_buffer.safe_a...
+...                             ^~
+/Users/guy/artventory/app/views/artworks/edit.html.erb:19: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/artworks/edit.html.erb:9: syntax error, unexpected tLABEL
+app/views/artworks/edit.html.erb:9: syntax error, unexpected keyword_do_block, expecting keyword_end
+app/views/artworks/edit.html.erb:19: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/artworks/edit.2" for 127.0.0.1 at 2018-08-10 23:18:28 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#edit as 
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:17
+  Rendering artworks/edit.html.erb within layouts/application
+  Rendered artworks/edit.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 6.3ms)
+
+
+  
+SyntaxError (/Users/guy/artventory/app/views/artworks/edit.html.erb:9: syntax error, unexpected tLABEL
+...rap_form_for(@artwork), method: "put" do |form| @output_buff...
+...                        ^~~~~~~
+/Users/guy/artventory/app/views/artworks/edit.html.erb:9: syntax error, unexpected keyword_do_block, expecting keyword_end
+...for(@artwork), method: "put" do |form| @output_buffer.safe_a...
+...                             ^~
+/Users/guy/artventory/app/views/artworks/edit.html.erb:19: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/artworks/edit.html.erb:9: syntax error, unexpected tLABEL
+app/views/artworks/edit.html.erb:9: syntax error, unexpected keyword_do_block, expecting keyword_end
+app/views/artworks/edit.html.erb:19: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/artworks/edit.2" for 127.0.0.1 at 2018-08-10 23:18:56 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#edit as 
+Completed 404 Not Found in 21ms (ActiveRecord: 5.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artwork without an ID):
+  
+app/controllers/artworks_controller.rb:17:in `edit'
+Started GET "/artworks/edit.2" for 127.0.0.1 at 2018-08-10 23:19:46 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#edit as 
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/artworks_controller.rb:16:in `edit'
+Started GET "/artworks/edit.2" for 127.0.0.1 at 2018-08-10 23:20:05 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#edit as 
+Completed 404 Not Found in 25ms (ActiveRecord: 8.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artwork without an ID):
+  
+app/controllers/artworks_controller.rb:17:in `edit'
+Started GET "/artworks/edit.2" for 127.0.0.1 at 2018-08-10 23:20:34 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#edit as 
+Completed 404 Not Found in 30ms (ActiveRecord: 6.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artwork without an ID):
+  
+app/controllers/artworks_controller.rb:17:in `edit'
+Started GET "/artworks/edit.2" for 127.0.0.1 at 2018-08-10 23:21:01 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#edit as 
+Completed 404 Not Found in 24ms (ActiveRecord: 5.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artwork without an ID):
+  
+app/controllers/artworks_controller.rb:17:in `edit'
+Started GET "/artworks/edit.2" for 127.0.0.1 at 2018-08-10 23:21:14 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#edit as 
+Completed 404 Not Found in 27ms (ActiveRecord: 11.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artwork without an ID):
+  
+app/controllers/artworks_controller.rb:17:in `edit'
+Started GET "/artworks/edit.2" for 127.0.0.1 at 2018-08-10 23:21:30 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#edit as 
+Completed 404 Not Found in 27ms (ActiveRecord: 4.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artwork without an ID):
+  
+app/controllers/artworks_controller.rb:17:in `edit'
+Started GET "/artworks/edit.2" for 127.0.0.1 at 2018-08-10 23:22:07 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#edit as 
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/artworks_controller.rb:16:in `edit'
+Started GET "/artworks/edit.2" for 127.0.0.1 at 2018-08-10 23:22:25 +0100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+  
+SyntaxError (/Users/guy/artventory/app/controllers/artworks_controller.rb:16: syntax error, unexpected ']'
+    puts "Whats UP #{params[*]}"
+                             ^
+/Users/guy/artventory/app/controllers/artworks_controller.rb:34: unterminated string meets end of file
+/Users/guy/artventory/app/controllers/artworks_controller.rb:34: syntax error, unexpected end-of-input, expecting tSTRING_DEND):
+  
+app/controllers/artworks_controller.rb:16: syntax error, unexpected ']'
+app/controllers/artworks_controller.rb:34: unterminated string meets end of file
+app/controllers/artworks_controller.rb:34: syntax error, unexpected end-of-input, expecting tSTRING_DEND
+Started GET "/artworks/edit.2" for 127.0.0.1 at 2018-08-10 23:22:39 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#edit as 
+Completed 404 Not Found in 24ms (ActiveRecord: 10.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artwork without an ID):
+  
+app/controllers/artworks_controller.rb:17:in `edit'
+Started GET "/artworks/edit.2" for 127.0.0.1 at 2018-08-10 23:22:49 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#edit as 
+Completed 404 Not Found in 19ms (ActiveRecord: 4.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artwork without an ID):
+  
+app/controllers/artworks_controller.rb:17:in `edit'
+Started GET "/artworks/edit.2" for 127.0.0.1 at 2018-08-10 23:23:02 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#edit as 
+Completed 404 Not Found in 28ms (ActiveRecord: 5.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artwork without an ID):
+  
+app/controllers/artworks_controller.rb:17:in `edit'
+Started GET "/artworks/edit.2" for 127.0.0.1 at 2018-08-10 23:23:23 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#edit as 
+Completed 404 Not Found in 19ms (ActiveRecord: 5.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artwork without an ID):
+  
+app/controllers/artworks_controller.rb:17:in `edit'
+Started GET "/artworks/edit.2" for 127.0.0.1 at 2018-08-10 23:23:40 +0100
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#edit as 
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:17
+  Rendering artworks/edit.html.erb within layouts/application
+  Rendered artworks/edit.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 122ms (ActiveRecord: 6.4ms)
+
+
+  
+SyntaxError (/Users/guy/artventory/app/views/artworks/edit.html.erb:9: syntax error, unexpected tLABEL
+...rap_form_for(@artwork), method: "put" do |form| @output_buff...
+...                        ^~~~~~~
+/Users/guy/artventory/app/views/artworks/edit.html.erb:9: syntax error, unexpected keyword_do_block, expecting keyword_end
+...for(@artwork), method: "put" do |form| @output_buffer.safe_a...
+...                             ^~
+/Users/guy/artventory/app/views/artworks/edit.html.erb:19: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/artworks/edit.html.erb:9: syntax error, unexpected tLABEL
+app/views/artworks/edit.html.erb:9: syntax error, unexpected keyword_do_block, expecting keyword_end
+app/views/artworks/edit.html.erb:19: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/artworks/edit.2" for 127.0.0.1 at 2018-08-10 23:24:25 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#edit as 
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:17
+  Rendering artworks/edit.html.erb within layouts/application
+  Rendered artworks/edit.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 445ms (Views: 368.6ms | ActiveRecord: 5.2ms)
+
+
+Started PATCH "/artworks/2" for 127.0.0.1 at 2018-08-10 23:24:31 +0100
+Processing by ArtworksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NaVHVZXnPyu5C28fLAQVjvHokY4C1/eBr192gsH7alX6oy84XQegDmAQj/gVGWQYWIDI9F89K03kk/xJHi8Kvg==", "artwork"=>{"title"=>"aeeta", "price"=>"3", "sold"=>"1"}, "commit"=>"Update Artwork", "id"=>"2"}
+  [1m[36mArtwork Load (2.1ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:22
+  [1m[36mArtwork Update (6.4ms)[0m  [1m[33mUPDATE "artworks" SET "title" = $1, "price" = $2, "sold" = $3, "updated_at" = $4 WHERE "artworks"."id" = $5[0m  [["title", nil], ["price", nil], ["sold", nil], ["updated_at", "2018-08-10 22:24:31.522786"], ["id", 2]]
+  ↳ app/controllers/artworks_controller.rb:22
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:22
+Redirected to http://localhost:3000/artworks
+Completed 302 Found in 19ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-10 23:24:31 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 56ms (Views: 51.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 23:24:37 +0100
+Processing by ArtworksController#new as HTML
+  Rendering artworks/new.html.erb within layouts/application
+  Rendered artworks/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 65ms (Views: 60.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/artworks" for 127.0.0.1 at 2018-08-10 23:24:41 +0100
+Processing by ArtworksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bmvOPG8coTcjhi98YKx832viDI9ICiH0NeUoQzH5rvkuZikWP4DIidR9RRVSZ3GTQuvn48GiUUBBnr7NwMFOTA==", "artwork"=>{"title"=>"test1", "price"=>"1", "sold"=>"1"}, "commit"=>"Submit"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:11
+  [1m[36mArtwork Create (0.8ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "price", "sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "test1"], ["price", 1], ["sold", true], ["created_at", "2018-08-10 22:24:41.871525"], ["updated_at", "2018-08-10 22:24:41.871525"]]
+  ↳ app/controllers/artworks_controller.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:11
+Redirected to http://localhost:3000/artworks
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-10 23:24:41 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.9ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 54ms (Views: 50.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/artworks/edit.4" for 127.0.0.1 at 2018-08-10 23:24:44 +0100
+Processing by ArtworksController#edit as 
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:17
+  Rendering artworks/edit.html.erb within layouts/application
+  Rendered artworks/edit.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 96ms (Views: 70.5ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/artworks/4" for 127.0.0.1 at 2018-08-10 23:24:50 +0100
+Processing by ArtworksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AEikIPxQWUEGQR+A+MQSJn+0muH+dt3dojqxfhT2JPHPTsxNNLDGZN9a/2fB2WOw1tzDm6OcARHp9ju1yyJEGg==", "artwork"=>{"title"=>"test2", "price"=>"2", "sold"=>"1"}, "commit"=>"Update Artwork", "id"=>"4"}
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:21
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:22
+  [1m[36mArtwork Update (0.9ms)[0m  [1m[33mUPDATE "artworks" SET "title" = $1, "price" = $2, "sold" = $3, "updated_at" = $4 WHERE "artworks"."id" = $5[0m  [["title", nil], ["price", nil], ["sold", nil], ["updated_at", "2018-08-10 22:24:50.861527"], ["id", 4]]
+  ↳ app/controllers/artworks_controller.rb:22
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:22
+Redirected to http://localhost:3000/artworks
+Completed 302 Found in 8ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-10 23:24:50 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (1.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 57ms (Views: 53.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-10 23:26:00 +0100
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (2.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (55.2ms)
+Completed 200 OK in 378ms (Views: 353.6ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 23:26:04 +0100
+Processing by ArtworksController#new as HTML
+  Rendering artworks/new.html.erb within layouts/application
+  Rendered artworks/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 43ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/artworks" for 127.0.0.1 at 2018-08-10 23:26:08 +0100
+Processing by ArtworksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CpORkL6ugQNnZnDUH+IYoAiQHekc9XryOqlnRQgd+GtKnna67jLovZCdGr0tKRXsIZn2hZVdCkZO0vHL+SUY3g==", "artwork"=>{"title"=>"test3", "price"=>"3", "sold"=>"0"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:11
+  [1m[36mArtwork Create (1.2ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "price", "sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "test3"], ["price", 3], ["sold", false], ["created_at", "2018-08-10 22:26:08.861030"], ["updated_at", "2018-08-10 22:26:08.861030"]]
+  ↳ app/controllers/artworks_controller.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:11
+Redirected to http://localhost:3000/artworks
+Completed 302 Found in 6ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-10 23:26:08 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.9ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 70ms (Views: 66.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/artworks/edit.5" for 127.0.0.1 at 2018-08-10 23:26:11 +0100
+Processing by ArtworksController#edit as 
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:17
+  Rendering artworks/edit.html.erb within layouts/application
+  Rendered artworks/edit.html.erb within layouts/application (27.2ms)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (can't write unknown attribute `acts_like_form_tag`):
+     6:   </head>
+     7:   <body>
+     8:     <h1> Update Artwork: </h1>
+     9:     <%= bootstrap_form_tag(@artwork) do |form| %>
+    10:       <%= form.text_field :title %>
+    11:       <%= form.number_field :price %>
+    12:       <%= form.check_box :sold %>
+  
+app/views/artworks/edit.html.erb:9:in `_app_views_artworks_edit_html_erb__1804318761593909887_70337910476060'
+Started GET "/artworks/edit.5" for 127.0.0.1 at 2018-08-10 23:33:32 +0100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#edit as 
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:17
+  Rendering artworks/edit.html.erb within layouts/application
+  Rendered artworks/edit.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 430ms (Views: 359.6ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/artworks?title=Need+better+IT%3F&price=3&sold=on" for 127.0.0.1 at 2018-08-10 23:33:43 +0100
+Processing by ArtworksController#index as HTML
+  Parameters: {"title"=>"Need better IT?", "price"=>"3", "sold"=>"on"}
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.7ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 55ms (Views: 45.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/artworks/new" for 127.0.0.1 at 2018-08-10 23:33:50 +0100
+Processing by ArtworksController#new as HTML
+  Rendering artworks/new.html.erb within layouts/application
+  Rendered artworks/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 43ms (Views: 39.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/artworks" for 127.0.0.1 at 2018-08-10 23:33:57 +0100
+Processing by ArtworksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C4tLEza8lThxzUxjmPnPo/GyGdEKfAq9310dBTMOhbNLhqw5ZiD8hoY2JgqqMsLv2LvyvYPUegmrJouLwjZlBg==", "artwork"=>{"title"=>"test99", "price"=>"99", "sold"=>"0"}, "commit"=>"Submit"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:11
+  [1m[36mArtwork Create (1.2ms)[0m  [1m[32mINSERT INTO "artworks" ("title", "price", "sold", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "test99"], ["price", 99], ["sold", false], ["created_at", "2018-08-10 22:33:57.241402"], ["updated_at", "2018-08-10 22:33:57.241402"]]
+  ↳ app/controllers/artworks_controller.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:11
+Redirected to http://localhost:3000/artworks
+Completed 302 Found in 8ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-10 23:33:57 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 44ms (Views: 40.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/artworks/edit.6" for 127.0.0.1 at 2018-08-10 23:34:00 +0100
+Processing by ArtworksController#edit as 
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:17
+  Rendering artworks/edit.html.erb within layouts/application
+  Rendered artworks/edit.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 96ms (Views: 69.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/artworks?title=Need+better+IT%3F&price=3&sold=on" for 127.0.0.1 at 2018-08-10 23:34:14 +0100
+Processing by ArtworksController#index as HTML
+  Parameters: {"title"=>"Need better IT?", "price"=>"3", "sold"=>"on"}
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 45ms (Views: 41.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/artworks/edit.6" for 127.0.0.1 at 2018-08-10 23:34:47 +0100
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#edit as 
+  [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:17
+  Rendering artworks/edit.html.erb within layouts/application
+  Rendered artworks/edit.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 470ms (Views: 391.4ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/artworks/update?title=Need+better+IT%3F&price=3&sold=on" for 127.0.0.1 at 2018-08-10 23:34:53 +0100
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for ArtworksController):
+  
+actionpack (5.2.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-08-10 23:35:02 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (1.2ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 57ms (Views: 52.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-10 23:39:46 +0100
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (32.8ms)
+Completed 200 OK in 428ms (Views: 408.9ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/artworks/edit.6" for 127.0.0.1 at 2018-08-10 23:39:50 +0100
+Processing by ArtworksController#edit as 
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:17
+  Rendering artworks/edit.html.erb within layouts/application
+  Rendered artworks/edit.html.erb within layouts/application (204.5ms)
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `text_tag' for #<#<Class:0x00007fca74d9bf70>:0x00007fca792938d0>
+Did you mean?  text_field_tag):
+    10: 
+    11:     <%= form_tag artwork_path(@artwork), method: "put" do %>
+    12:       <label> Edit Title </label>
+    13:       <%= text_tag :title, @artwork.title %>
+    14:       <label> Edit Price </label>
+    15:       <%= number_tag :price, @artwork.price %>
+    16:       <label> Edit Sold </label>
+  
+app/views/artworks/edit.html.erb:13:in `block in _app_views_artworks_edit_html_erb__491109767390246072_70253764903580'
+app/views/artworks/edit.html.erb:11:in `_app_views_artworks_edit_html_erb__491109767390246072_70253764903580'
+Started GET "/artworks/edit.6" for 127.0.0.1 at 2018-08-10 23:40:14 +0100
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guy/.rvm/gems/ruby-2.5.1/gems/web-console-3.6.2/lib/web_console/middleware.rb:135
+Processing by ArtworksController#edit as 
+  [1m[36mArtwork Load (1.7ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:17
+  Rendering artworks/edit.html.erb within layouts/application
+  Rendered artworks/edit.html.erb within layouts/application (240.4ms)
+Completed 500 Internal Server Error in 395ms (ActiveRecord: 8.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `number_tag' for #<#<Class:0x00007fab0297f4f0>:0x00007fab029541b0>
+Did you mean?  number_field_tag):
+    12:       <label> Edit Title </label>
+    13:       <%= text_field_tag :title, @artwork.title %>
+    14:       <label> Edit Price </label>
+    15:       <%= number_tag :price, @artwork.price %>
+    16:       <label> Edit Sold </label>
+    17:       <%= checkbox_tag :sold, @artwork.sold %>
+    18:       <%= submit_tag "byee" %>
+  
+app/views/artworks/edit.html.erb:15:in `block in _app_views_artworks_edit_html_erb__1122380908959783805_70186229915340'
+app/views/artworks/edit.html.erb:11:in `_app_views_artworks_edit_html_erb__1122380908959783805_70186229915340'
+Started GET "/artworks/edit.6" for 127.0.0.1 at 2018-08-10 23:40:45 +0100
+Processing by ArtworksController#edit as 
+  [1m[36mArtwork Load (0.8ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:17
+  Rendering artworks/edit.html.erb within layouts/application
+  Rendered artworks/edit.html.erb within layouts/application (178.7ms)
+Completed 500 Internal Server Error in 230ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `checkbox_tag' for #<#<Class:0x00007fab0297f4f0>:0x00007fab02a710e8>
+Did you mean?  check_box_tag):
+    14:       <label> Edit Price </label>
+    15:       <%= number_field_tag :price, @artwork.price %>
+    16:       <label> Edit Sold </label>
+    17:       <%= checkbox_tag :sold, @artwork.sold %>
+    18:       <%= submit_tag "byee" %>
+    19:     <% end %>
+    20:     <!-- <%= bootstrap_form_for(@artwork) do |form| %>
+  
+app/views/artworks/edit.html.erb:17:in `block in _app_views_artworks_edit_html_erb__1122380908959783805_70186230321860'
+app/views/artworks/edit.html.erb:11:in `_app_views_artworks_edit_html_erb__1122380908959783805_70186230321860'
+Started GET "/artworks/edit.6" for 127.0.0.1 at 2018-08-10 23:40:57 +0100
+Processing by ArtworksController#edit as 
+  [1m[36mArtwork Load (0.9ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:17
+  Rendering artworks/edit.html.erb within layouts/application
+  Rendered artworks/edit.html.erb within layouts/application (39.7ms)
+Completed 200 OK in 415ms (Views: 379.2ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/artworks/6" for 127.0.0.1 at 2018-08-10 23:41:08 +0100
+Processing by ArtworksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"osNOYQ5KEhpxh+9uVKm38zxhlhqBcq6GDH20/paqrbZtxSYMxqqNP6icD4lttMZllQnPYNyYckpHsT41SX7NXQ==", "title"=>"Need better IT?", "price"=>"99", "sold"=>"false", "commit"=>"byee", "id"=>"6"}
+  [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT  "artworks".* FROM "artworks" WHERE "artworks"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/artworks_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artworks_controller.rb:22
+  [1m[36mArtwork Update (0.5ms)[0m  [1m[33mUPDATE "artworks" SET "title" = $1, "updated_at" = $2 WHERE "artworks"."id" = $3[0m  [["title", "Need better IT?"], ["updated_at", "2018-08-10 22:41:08.610462"], ["id", 6]]
+  ↳ app/controllers/artworks_controller.rb:22
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artworks_controller.rb:22
+Redirected to http://localhost:3000/artworks
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/artworks" for 127.0.0.1 at 2018-08-10 23:41:08 +0100
+Processing by ArtworksController#index as HTML
+  Rendering artworks/index.html.erb within layouts/application
+  [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks"[0m
+  ↳ app/views/artworks/index.html.erb:17
+  Rendered artworks/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 0.3ms)
+
+
