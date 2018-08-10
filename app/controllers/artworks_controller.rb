@@ -12,6 +12,21 @@ class ArtworksController < ApplicationController
     redirect_to artworks_path
   end
 
+  def edit
+    puts "Paramsssss---------:   " + params[:id]
+    @artwork = Artwork.find(params[:id])
+  end
+
+  def update
+    @artwork = Artwork.find(params[:id])
+    @artwork.update(
+      title: params[:title],
+      price: params[:price],
+      sold: params[:sold],
+    )
+    redirect_to artworks_path
+  end
+
   private
   def artwork_params
     params.require(:artwork).permit(:title,:price,:sold)
