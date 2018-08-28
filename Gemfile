@@ -19,6 +19,9 @@ gem 'bootstrap'
 # Jquery
 gem 'jquery-rails'
 
+# Figaro for environment variables
+gem 'figaro'
+
 # Devise
 gem 'devise'
 gem 'omniauth-google-oauth2'
