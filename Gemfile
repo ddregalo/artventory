@@ -3,10 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
-# Rspec Testing for Rails
-group :development, :test do
-  gem 'rspec-rails', '~> 3.7'
-end
+# # Rspec Testing for Rails
+gem 'rspec-rails', '~> 3.7'
+gem 'rspec'
 
 # Add Bootstrap form
 gem 'bootstrap_form', ">= 4.0.0.alpha1"
