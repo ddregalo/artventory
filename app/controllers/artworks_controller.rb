@@ -1,4 +1,6 @@
 class ArtworksController < ApplicationController
+  protect_from_forgery
+  before_action :authenticate_user!
   def index
     @artworks = Artwork.all
   end
