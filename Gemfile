@@ -21,6 +21,7 @@ gem 'jquery-rails'
 
 # Devise
 gem 'devise'
+gem 'omniauth-google-oauth2'
 
 gem 'rails', '~> 5.2.1'
 # Use postgresql as the database for Active Record
