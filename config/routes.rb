@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'artworks/index'
   root 'artworks#index'
   get 'artworks/new'
