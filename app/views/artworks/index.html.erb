@@ -7,6 +7,12 @@
 	<body>
 		<h1>Artventory V0.0.0.0.0.1a</h1>
 
+		<% if user_signed_in? %>
+			<li>
+			<%= link_to('Sign Out', destroy_user_session_path, method: :delete) %>        
+			</li>
+		<% end %>
+
 		<%= link_to artworks_new_path do %>
 			<h2>New Artwork</h2>
 		<% end %>
