@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :user, controllers: { omniauth_callbacks: 'user/omniauth_callbacks' }
+  devise_for :user, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   get 'artworks/index'
   root 'artworks#index'
   get 'artworks/new'
