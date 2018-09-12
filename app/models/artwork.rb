@@ -19,12 +19,5 @@ class Artwork < ApplicationRecord
       indexes :created_at, type: date
       indexes :updated_at, type: date
     end
-
-
-
-
-
-
-    end
   end
 end
