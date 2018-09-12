@@ -10,6 +10,10 @@ gem 'rspec'
 # Test coverage
 gem 'simplecov'
 
+# Elasticsearch for Rails
+gem 'elasticsearch-model', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
+gem 'elasticsearch-rails', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
+
 # Add Bootstrap form
 gem 'bootstrap_form', ">= 4.0.0.alpha1"
 
