@@ -19,4 +19,12 @@ class Artwork < ApplicationRecord
       indexes :updated_at, type: :date
     end
   end
+
+  def self.search_all(query)
+    self.search({
+      query: {
+        match_all: {}
+      }
+    })
+  end
 end
