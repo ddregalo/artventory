@@ -36,4 +36,34 @@ class Artwork < ApplicationRecord
       }
     })
   end
+
+  def self.search_artworks_sold(query, sold)
+    self.search({
+      "query": {
+        "bool": {
+          "filter": {
+            "term": {
+              "sold": sold
+            }
+          },
+          "must": {
+            "multi_match": {
+              "query":    query, 
+              "fields": [ 
+                "title",
+                "medium",
+                "description",
+                "collection",
+                "location"
+              ]
+            }
+          }
+        }
+      }
+    })
+  end
+   
+  
+
+
 end

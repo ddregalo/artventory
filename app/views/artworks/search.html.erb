@@ -5,6 +5,13 @@
   <%= form.submit 'Search' %>
 <% end %>
 
+<!-- <%= form_for :search_artworks_sold, url: search_artworks_path, method: :get do |form| %>
+#   <%= form.text_field :query, value: params[:search_artworks_query].presence && params[:search_artworks_query][:query] %>
+#   <%= form.text_field :sold, value: params[:search_artworks_sold].presence && params[:search_artworks_sold][:sold] %>
+#   <%= form.submit 'Search' %>
+# <% end %>
+--!>
+
 <% unless @artworks.nil? %>
   <% if @artworks.empty? %>
     <h2>No artworks found matching your query.</h2>

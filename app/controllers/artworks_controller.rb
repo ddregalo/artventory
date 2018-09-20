@@ -43,11 +43,20 @@ class ArtworksController < ApplicationController
 
   def search
     query = params[:search_artworks].presence && params[:search_artworks][:query]
-  
     if query
       @artworks = Artwork.search_artworks_main(query)
     end
   end
+
+  def search_sold
+    query = params[:search_artworks_query].presence && params[:search_artworks_query][:query]
+    sold = params[:search_artworks_sold].presence && params[:search_artworks_sold][:sold]
+    if query && sold
+      @artworks = Artwork.search_artworks_sold(query,sold)
+    end
+  end
+
+
 
   private
   def artwork_params
