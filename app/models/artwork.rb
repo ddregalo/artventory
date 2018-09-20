@@ -22,19 +22,18 @@ class Artwork < ApplicationRecord
 
   def self.search_artworks_main(query)
     self.search({
-        "query": {
-          "multi_match": {
-            "query":    query, 
-            "fields": [ 
-              "title",
-              "medium",
-              "description",
-              "collection",
-              "location"
-            ]
-          },
-
+      "query": {
+        "multi_match": {
+          "query":    query, 
+          "fields": [ 
+            "title",
+            "medium",
+            "description",
+            "collection",
+            "location"
+          ]
         }
+      }
     })
   end
 end
