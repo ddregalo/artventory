@@ -1,0 +1,35 @@
+<h1>Elastic search for Artworks</h1>
+
+<%= form_for :search_artworks, url: search_artworks_path, method: :get do |form| %>
+  <%= form.text_field :query, value: params[:search_artworks].presence && params[:search_artworks][:query] %>
+  <%= form.submit 'Search' %>
+<% end %>
+
+<% unless @artworks.nil? %>
+  <% if @artworks.empty? %>
+    <h2>No artworks found matching your query.</h2>
+  <% else %>
+    <h2>Search results</h2>
+
+    <table style="width: 100%;">
+      <thead>
+         <tr>
+           <th>Title</th>
+           <th>Price</th>
+           <th>Sold</th>
+         </tr>
+      </thead>
+
+      <tbody>
+        <% @artworks.each do |artwork| %>
+          <tr>
+            <td><%= artwork.title %></td>
+            <td><%= artwork.price %></td>
+            <td><%= artwork.sold %></td>
+            <td><%= link_to 'View', artwork_path(artwork.id) %></td>
+          </tr>
+        <% end %>
+      <tbody>
+    </table>
+  <% end %>
+<% end %>

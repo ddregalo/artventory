@@ -33,6 +33,14 @@ class ArtworksController < ApplicationController
     redirect_to artworks_path
   end
 
+  def search
+    query = params[:search_artworks].presence && params[:search_artworks][:query]
+  
+    if query
+      @artworks = Artwork.search_all(query)
+    end
+  end
+
   private
   def artwork_params
     params.require(:artwork).permit(:title,:price,:sold)
