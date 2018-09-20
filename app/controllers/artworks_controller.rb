@@ -45,7 +45,7 @@ class ArtworksController < ApplicationController
     query = params[:search_artworks].presence && params[:search_artworks][:query]
   
     if query
-      @artworks = Artwork.search_all(query)
+      @artworks = Artwork.search_artworks_main(query)
     end
   end
 
