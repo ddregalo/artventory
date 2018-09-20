@@ -1,4 +1,25 @@
 # ToDo List
 
-
 - Add creation month to artwork schema
+- Add filter by sold
+- Add filter by created
+- Vue
+- Sort by date
+- File Upload
+- Add autocomplete
+
+Schemas
+- Collection schema
+- Medium schema
+- Location schema
+
+Forms
+- Link collection field to table
+- Link medum field to table
+- Link location field to table
+- create new collection link in form 
+- create new Medium in form
+- create new Location in form
+
+https://bodybuilder.js.org/
+
