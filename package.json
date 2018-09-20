@@ -3,12 +3,5 @@
   "private": true,
   "dependencies": {},
   "scripts": {
-    "rails db:reset": "rails db:drop db:create db:migrate",
   }
 }
-
-
-// Drop elasticsearch index and re-create *Do this in Rails Console* :
-// Artwork.__elasticsearch__.delete_index!
-// Artwork.import force:true
-
