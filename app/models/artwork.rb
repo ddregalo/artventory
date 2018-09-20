@@ -22,9 +22,12 @@ class Artwork < ApplicationRecord
 
   def self.search_all(query)
     self.search({
-      query: {
-        match_all: {}
-      }
+        "query": {
+          "multi_match": {
+            "query":    query, 
+            "fields": [ "title" ]
+          }
+        }
     })
   end
 end
