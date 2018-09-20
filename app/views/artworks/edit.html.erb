@@ -9,23 +9,34 @@
 
 
     <%= form_tag artwork_path(@artwork), method: "put" do %>
+
       <label> Edit Title </label>
       <%= text_field_tag :title, @artwork.title %>
+      <label> Edit Year </label>
+      <%= date_field_tag :year, @artwork.year %>
+      <label> Edit Medium </label>
+      <%= text_field_tag :medium, @artwork.medium %>
       <label> Edit Price </label>
       <%= number_field_tag :price, @artwork.price %>
-      <label> Edit Sold </label>
-      <%= check_box_tag :sold, @artwork.sold %>
+      <label> Edit Description </label>
+      <%= text_field_tag :description, @artwork.description %>
+      <label> Edit collection </label>
+      <%= text_field_tag :collection, @artwork.collection %>
+      <label> Edit location </label>
+      <%= text_field_tag :location, @artwork.location %>
+      <label> Edit height </label>
+      <%= number_field_tag :height, @artwork.height %>
+      <label> Edit width </label>
+      <%= number_field_tag :width, @artwork.width %>
+      <label> Edit depth </label>
+      <%= number_field_tag :depth, @artwork.depth %>
+      <label> Edit sold </label>
+      <%= check_box :sold, @artwork.sold %>
+      <label> Edit updated_at </label>
+      <%= date_field_tag :updated_at, @artwork.updated_at %>
+
       <%= submit_tag "byee" %>
     <% end %>
-    <!-- <%= bootstrap_form_for(@artwork) do |form| %>
-      <%= form.text_field :title %>
-      <%= form.number_field :price %>
-      <%= form.check_box :sold %>
-      <%= form.submit "Update Artwork" %>
-    <% end %>
- -->
-
-
 
   </body>
 </html>

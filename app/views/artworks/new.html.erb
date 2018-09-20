@@ -7,9 +7,17 @@
   <body>
     <h1> Form: </h1>
     		<%= bootstrap_form_for(@artwork) do |form| %>
-    			<%= form.text_field :title %>
-    			<%= form.number_field :price %>
-    			<%= form.check_box :sold %>
+          <%= form.text_field :title %>
+          <%= form.date_field :year %>
+          <%= form.text_field :medium %>
+          <%= form.number_field :price %>
+          <%= form.text_field :description %>
+          <%= form.text_field :collection %>
+          <%= form.text_field :location %>
+          <%= form.number_field :height %>
+          <%= form.number_field :width %>
+          <%= form.number_field :depth %>
+          <%= form.check_box :sold %>
           <%= form.submit "Submit" %>
     		<% end %>
   </body>

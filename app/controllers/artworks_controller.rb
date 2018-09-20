@@ -21,7 +21,15 @@ class ArtworksController < ApplicationController
     @artwork = Artwork.find(params[:id])
     @artwork.update(
       title: params[:title],
+      year: params[:year],
+      medium: params[:medium],
       price: params[:price],
+      description: params[:description],
+      collection: params[:collectionlocation],
+      location: params[:location],
+      height: params[:height],
+      width: params[:width],
+      depth: params[:depth],
       sold: params[:sold],
     )
     redirect_to artworks_path
@@ -43,6 +51,6 @@ class ArtworksController < ApplicationController
 
   private
   def artwork_params
-    params.require(:artwork).permit(:title,:price,:sold)
+    params.require(:artwork).permit(:title, :year, :medium, :price, :description, :collection, :location, :height, :width, :depth, :sold)
   end
 end
