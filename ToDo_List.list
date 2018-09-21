@@ -1,5 +1,7 @@
 # ToDo List
 
+- Finish Elasticsearch query sold or not sold, that is the question
+
 - Add creation month to artwork schema
 - Add filter by sold
 - Add filter by created
@@ -7,6 +9,7 @@
 - Sort by date
 - File Upload
 - Add autocomplete
+- ummm... multitenant?
 
 Schemas
 - Collection schema
