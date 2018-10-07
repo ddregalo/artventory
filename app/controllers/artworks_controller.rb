@@ -43,20 +43,18 @@ class ArtworksController < ApplicationController
 
   def search
     query = params[:search_artworks].presence && params[:search_artworks][:query]
-    if query
-      @artworks = Artwork.search_artworks_main(query)
+    option = params[:search_artworks].presence && params[:search_artworks][:option]
+    if query && option
+      case option
+        when "all"
+          @artworks = Artwork.search_artworks_main(query)
+        when "sold"
+          @artworks = Artwork.search_artworks_sold(query, true)
+        when "unsold"
+          @artworks = Artwork.search_artworks_sold(query, false)
+      end
     end
   end
-
-  def search_sold
-    query = params[:search_artworks_query].presence && params[:search_artworks_query][:query]
-    sold = params[:search_artworks_sold].presence && params[:search_artworks_sold][:sold]
-    if query && sold
-      @artworks = Artwork.search_artworks_sold(query,sold)
-    end
-  end
-
-
 
   private
   def artwork_params
