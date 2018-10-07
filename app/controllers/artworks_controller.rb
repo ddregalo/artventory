@@ -25,7 +25,7 @@ class ArtworksController < ApplicationController
       medium: params[:medium],
       price: params[:price],
       description: params[:description],
-      collection: params[:collectionlocation],
+      collection: params[:collection],
       location: params[:location],
       height: params[:height],
       width: params[:width],

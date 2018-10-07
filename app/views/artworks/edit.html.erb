@@ -20,7 +20,7 @@
       <%= number_field_tag :price, @artwork.price %>
       <label> Edit Description </label>
       <%= text_field_tag :description, @artwork.description %>
-      <label> Edit collection </label>
+      <label> Edit Collection </label>
       <%= text_field_tag :collection, @artwork.collection %>
       <label> Edit location </label>
       <%= text_field_tag :location, @artwork.location %>
@@ -31,7 +31,7 @@
       <label> Edit depth </label>
       <%= number_field_tag :depth, @artwork.depth %>
       <label> Edit sold </label>
-      <%= check_box :sold, @artwork.sold %>
+      <%= check_box_tag 'sold', '1', @artwork.sold %>  
       <label> Edit updated_at </label>
       <%= date_field_tag :updated_at, @artwork.updated_at %>
       <%= submit_tag "byee" %>
