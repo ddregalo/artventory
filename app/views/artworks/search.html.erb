@@ -2,15 +2,14 @@
 
 <%= form_for :search_artworks, url: search_artworks_path, method: :get do |form| %>
   <%= form.text_field :query, value: params[:search_artworks].presence && params[:search_artworks][:query] %>
+  <%= form.label :search_all, 'Search All' %>
+  <%= form.radio_button :option, 'all', checked: true %>
+  <%= form.label :search_sold, 'Sold' %>
+  <%= form.radio_button :option, 'sold' %>
+  <%= form.label :search_unsold, 'Unsold' %>
+  <%= form.radio_button :option, 'unsold' %>
   <%= form.submit 'Search' %>
 <% end %>
-
-<!-- <%= form_for :search_artworks_sold, url: search_artworks_path, method: :get do |form| %>
-#   <%= form.text_field :query, value: params[:search_artworks_query].presence && params[:search_artworks_query][:query] %>
-#   <%= form.text_field :sold, value: params[:search_artworks_sold].presence && params[:search_artworks_sold][:sold] %>
-#   <%= form.submit 'Search' %>
-# <% end %>
---!>
 
 <% unless @artworks.nil? %>
   <% if @artworks.empty? %>
