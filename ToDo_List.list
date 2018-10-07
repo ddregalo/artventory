@@ -1,14 +1,14 @@
 # ToDo List
 
-- Finish Elasticsearch query sold or not sold, that is the question
+-   DONE   Finish Elasticsearch query sold or not sold, that is the question
+-   DONE   Add filter by sold
 
+- Add filter by created (Advanced Search)
 - Add creation month to artwork schema
-- Add filter by sold
-- Add filter by created
-- Vue
+- Vue PWA
 - Sort by date
 - File Upload
-- Add autocomplete
+- Add autocomplete ???
 - ummm... multitenant?
 
 Schemas
