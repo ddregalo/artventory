@@ -10,6 +10,8 @@
 - File Upload
 - Add autocomplete ???
 - ummm... multitenant?
+- add notes to create and edit forms
+
 
 Schemas
 - Collection schema
@@ -25,4 +27,9 @@ Forms
 - create new Location in form
 
 https://bodybuilder.js.org/
+
+Bugs
+
+- search page auto refresh radio button jumps back
+- check out - - when no input provided create new error page
 
