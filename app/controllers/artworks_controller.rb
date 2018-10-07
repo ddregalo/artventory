@@ -1,7 +1,7 @@
 class ArtworksController < ApplicationController
 
   def index
-    @artworks = Artwork.all
+    @artworks = Artwork.where(uid: current_user.uid)
   end
 
   def new
@@ -10,6 +10,7 @@ class ArtworksController < ApplicationController
 
   def create
     @artwork = Artwork.create(artwork_params)
+      .update(uid: current_user.uid)
     redirect_to artworks_path
   end
 
