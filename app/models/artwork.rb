@@ -17,6 +17,7 @@ class Artwork < ApplicationRecord
       indexes :sold, type: :boolean
       indexes :created_at, type: :date
       indexes :updated_at, type: :date
+      indexes :uid, type: :text
     end
   end
 
