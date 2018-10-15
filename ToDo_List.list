@@ -11,6 +11,10 @@
 - Add autocomplete ???
 - ummm... multitenant?
 - add notes to create and edit forms
+- Access and attach Avatar from Google to User on login
+- Tick box for remember me + session expiration for user
+- Change multi-tenant to use GUID for user.id
+- Change multi-tenant to use user.id instead user.uid
 
 Images
 - Upload image to artwork db
