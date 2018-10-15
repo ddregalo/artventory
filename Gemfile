@@ -30,6 +30,9 @@ gem 'figaro'
 gem 'devise'
 gem 'omniauth-google-oauth2'
 
+# CarrierWave for image file upload
+gem 'carrierwave', '~> 1.0'
+
 gem 'rails', '~> 5.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
