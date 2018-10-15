@@ -1,9 +1,15 @@
 class User < ApplicationRecord
+  
+  mount_uploader :avatar, AvatarUploader
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, :omniauth_providers => [:google_oauth2]
+
+  validates_integrity_of  :avatar
+  validates_processing_of :avatar
 
   def self.from_omniauth(auth)
     # Either create a User record or update it based on the provider (Google) and the UID   
