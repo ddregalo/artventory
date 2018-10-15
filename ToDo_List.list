@@ -8,11 +8,12 @@
 
 - Vue PWA
 - Sort by date
-- File Upload
 - Add autocomplete ???
 - ummm... multitenant?
 - add notes to create and edit forms
 
+Images
+- Upload image to artwork db
 
 Schemas
 - Collection schema
@@ -27,6 +28,16 @@ Forms
 - create new collection link in form 
 - create new Medium in form
 - create new Location in form
+
+Error Handling
+- Wrong input types into forms
+
+
+Integrations & Sharing
+- Share a public url to an artwork (formatted for public view - user can choose whether to include certain fields eg. price)
+- Share artwork onto Instagram/ Other social media platforms ???? Confirmation that reassures the user of final output before posting.
+
+
 
 https://bodybuilder.js.org/
 
