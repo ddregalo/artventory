@@ -31,6 +31,8 @@ class ArtworksController < ApplicationController
       width: params[:width],
       depth: params[:depth],
       sold: params[:sold],
+      notes: params[:notes],
+      completed_month: params[:completed_month]
     )
     redirect_to artworks_path
   end
@@ -58,6 +60,6 @@ class ArtworksController < ApplicationController
 
   private
   def artwork_params
-    params.require(:artwork).permit(:title, :year, :medium, :price, :description, :collection, :location, :height, :width, :depth, :sold)
+    params.require(:artwork).permit(:title, :year, :medium, :price, :description, :collection, :location, :height, :width, :depth, :sold, :notes, :completed_month)
   end
 end

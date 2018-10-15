@@ -2,9 +2,10 @@
 
 -   DONE   Finish Elasticsearch query sold or not sold, that is the question
 -   DONE   Add filter by sold
+-   DONE   Add creation month to artwork schema
 
 - Add filter by created (Advanced Search)
-- Add creation month to artwork schema
+
 - Vue PWA
 - Sort by date
 - File Upload
@@ -19,6 +20,7 @@ Schemas
 - Location schema
 
 Forms
+- Add completed month to form input and save to update
 - Link collection field to table
 - Link medum field to table
 - Link location field to table

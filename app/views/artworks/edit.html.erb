@@ -31,9 +31,11 @@
       <label> Edit depth </label>
       <%= number_field_tag :depth, @artwork.depth %>
       <label> Edit sold </label>
-      <%= check_box_tag 'sold', '1', @artwork.sold %>  
-      <label> Edit updated_at </label>
-      <%= date_field_tag :updated_at, @artwork.updated_at %>
+      <%= check_box_tag 'sold', '1', @artwork.sold %>
+      <label> Notes</label>
+      <%= textarea_field_tag :notes, @artwork.notes %>
+      <label>Artwork Completion Month width </label>
+      <%= number_field_tag :completed_month, @artwork.completed_month %>
       <%= submit_tag "byee" %>
     <% end %>
 
