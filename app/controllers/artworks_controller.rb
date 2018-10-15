@@ -16,6 +16,11 @@ class ArtworksController < ApplicationController
 
   def edit
     @artwork = Artwork.find(params[:format])
+    if @artwork.uid == current_user.uid
+      return @artwork
+    else
+      raise "Unauthorized user access"
+    end
   end
 
   def update
@@ -40,8 +45,13 @@ class ArtworksController < ApplicationController
 
   def delete
     @artwork = Artwork.find(params[:format])
-    @artwork.destroy
-    redirect_to artworks_path
+    if @artwork.uid == current_user.uid
+      @artwork.destroy
+      redirect_to artworks_path
+    else
+      raise "Unauthorized Action"
+    end
+
   end
 
   def search
@@ -50,11 +60,11 @@ class ArtworksController < ApplicationController
     if query && option
       case option
         when "all"
-          @artworks = Artwork.search_artworks_main(query)
+          @artworks = Artwork.search_artworks_main(query, current_user.uid)
         when "sold"
-          @artworks = Artwork.search_artworks_sold(query, true)
+          @artworks = Artwork.search_artworks_sold(query, true, current_user.uid)
         when "unsold"
-          @artworks = Artwork.search_artworks_sold(query, false)
+          @artworks = Artwork.search_artworks_sold(query, false, current_user.uid)
       end
     end
   end
