@@ -35,4 +35,45 @@ RSpec.describe ArtworksController, type: :controller do
       expect(response).to render_template('artworks/new')
     end
   end
+
+  describe 'POST new artwork' do
+    it 'creates a new artwork' do
+      post :create, params: { artwork:
+        {
+          title: 'Test Artwork 1',
+          year: 1984,
+          medium: 'Acrylic',
+          price: 1500.00,
+          description: 'Testing 1-2',
+          collection: 'Test Collection',
+          location: 'London',
+          height: 10,
+          width: 10,
+          depth: 3,
+          sold: true
+        }}
+      expect(Artwork.all.count).to eq(1)
+    end
+  end
+
+  # describe 'POST delete post' do
+  #   it 'deletes a post' do
+  #     post :create, params: { artwork:
+  #       {
+  #         title: 'Test Artwork 1',
+  #         year: 1984,
+  #         medium: 'Acrylic',
+  #         price: 1500.00,
+  #         description: 'Testing 1-2',
+  #         collection: 'Test Collection',
+  #         location: 'London',
+  #         height: 10,
+  #         width: 10,
+  #         depth: 3,
+  #         sold: true
+  #       }}
+  #     post :delete, params: { id: Artwork.last.id }
+  #     expect(Artwork.all.count).to eq(0)
+  #   end
+  # end
 end
