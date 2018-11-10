@@ -17,34 +17,47 @@ class Artwork < ApplicationRecord
       indexes :sold, type: :boolean
       indexes :created_at, type: :date
       indexes :updated_at, type: :date
+      indexes :uid, type: :text
     end
   end
 
-  def self.search_artworks_main(query)
-    self.search({
-      "query": {
-        "multi_match": {
-          "query":    query, 
-          "fields": [ 
-            "title",
-            "medium",
-            "description",
-            "collection",
-            "location"
-          ]
-        }
-      }
-    })
-  end
-
-  def self.search_artworks_sold(query, sold)
+  def self.search_artworks_main(query, uid)
     self.search({
       "query": {
         "bool": {
           "filter": {
             "term": {
-              "sold": sold
+              "uid": uid
             }
+          },
+          "must": {
+            "multi_match": {
+              "query":    query, 
+              "fields": [ 
+                "title",
+                "medium",
+                "description",
+                "collection",
+                "location"
+              ]
+            }
+          }
+        }
+      }
+    })
+  end
+
+  def self.search_artworks_sold(query, sold, uid)
+    self.search({
+      "query": {
+        "bool": {
+          "filter": {
+            "bool": {
+              "must": [
+                { "term": {"uid": uid}},
+                { "term": {"sold": sold}}
+              ]
+            }          
           },
           "must": {
             "multi_match": {

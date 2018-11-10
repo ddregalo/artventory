@@ -1,7 +1,7 @@
 class ArtworksController < ApplicationController
 
   def index
-    @artworks = Artwork.all
+    @artworks = Artwork.where(uid: current_user.uid)
   end
 
   def new
@@ -10,11 +10,17 @@ class ArtworksController < ApplicationController
 
   def create
     @artwork = Artwork.create(artwork_params)
+      .update(uid: current_user.uid)
     redirect_to artworks_path
   end
 
   def edit
     @artwork = Artwork.find(params[:format])
+    if @artwork.uid == current_user.uid
+      return @artwork
+    else
+      raise "Unauthorized user access"
+    end
   end
 
   def update
@@ -31,14 +37,21 @@ class ArtworksController < ApplicationController
       width: params[:width],
       depth: params[:depth],
       sold: params[:sold],
+      notes: params[:notes],
+      completed_month: params[:completed_month]
     )
     redirect_to artworks_path
   end
 
   def delete
     @artwork = Artwork.find(params[:format])
-    @artwork.destroy
-    redirect_to artworks_path
+    if @artwork.uid == current_user.uid
+      @artwork.destroy
+      redirect_to artworks_path
+    else
+      raise "Unauthorized Action"
+    end
+
   end
 
   def search
@@ -47,17 +60,17 @@ class ArtworksController < ApplicationController
     if query && option
       case option
         when "all"
-          @artworks = Artwork.search_artworks_main(query)
+          @artworks = Artwork.search_artworks_main(query, current_user.uid)
         when "sold"
-          @artworks = Artwork.search_artworks_sold(query, true)
+          @artworks = Artwork.search_artworks_sold(query, true, current_user.uid)
         when "unsold"
-          @artworks = Artwork.search_artworks_sold(query, false)
+          @artworks = Artwork.search_artworks_sold(query, false, current_user.uid)
       end
     end
   end
 
   private
   def artwork_params
-    params.require(:artwork).permit(:title, :year, :medium, :price, :description, :collection, :location, :height, :width, :depth, :sold)
+    params.require(:artwork).permit(:title, :year, :medium, :price, :description, :collection, :location, :height, :width, :depth, :sold, :notes, :completed_month)
   end
 end
