@@ -44,7 +44,7 @@ class ArtworksController < ApplicationController
   end
 
   def delete
-    @artwork = Artwork.find(params[:format])
+    @artwork = Artwork.find(params[:uid])
     if @artwork.uid == current_user.uid
       @artwork.destroy
       redirect_to artworks_path
