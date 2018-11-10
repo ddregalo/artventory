@@ -56,24 +56,24 @@ RSpec.describe ArtworksController, type: :controller do
     end
   end
 
-  # describe 'POST delete post' do
-  #   it 'deletes a post' do
-  #     post :create, params: { artwork:
-  #       {
-  #         title: 'Test Artwork 1',
-  #         year: 1984,
-  #         medium: 'Acrylic',
-  #         price: 1500.00,
-  #         description: 'Testing 1-2',
-  #         collection: 'Test Collection',
-  #         location: 'London',
-  #         height: 10,
-  #         width: 10,
-  #         depth: 3,
-  #         sold: true
-  #       }}
-  #     post :delete, params: { id: Artwork.last.id }
-  #     expect(Artwork.all.count).to eq(0)
-  #   end
-  # end
+  describe 'POST delete post' do
+    it 'deletes a post' do
+      post :create, params: { artwork:
+        {
+          title: 'Test Artwork 1',
+          year: 1984,
+          medium: 'Acrylic',
+          price: 1500.00,
+          description: 'Testing 1-2',
+          collection: 'Test Collection',
+          location: 'London',
+          height: 10,
+          width: 10,
+          depth: 3,
+          sold: true
+        }}
+      post :delete, params: { uid: Artwork.last.id }
+      expect(Artwork.all.count).to eq(0)
+    end
+  end
 end
