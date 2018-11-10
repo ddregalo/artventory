@@ -23,4 +23,16 @@ RSpec.describe ArtworksController, type: :controller do
       expect(response).to render_template('artworks/index')
     end
   end
+
+  describe 'GET #artworks/new' do
+    it 'returns http sucess status of 200 or ok' do
+      get :new
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'renders the new view' do
+      get :new
+      expect(response).to render_template('artworks/new')
+    end
+  end
 end
