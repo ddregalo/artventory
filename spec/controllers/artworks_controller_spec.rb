@@ -56,7 +56,7 @@ RSpec.describe ArtworksController, type: :controller do
     end
   end
 
-  describe 'POST delete post' do
+  describe 'POST delete artwork' do
     it 'deletes a post' do
       post :create, params: { artwork:
         {
@@ -74,6 +74,45 @@ RSpec.describe ArtworksController, type: :controller do
         }}
       post :delete, params: { uid: Artwork.last.id }
       expect(Artwork.all.count).to eq(0)
+    end
+  end
+
+  describe 'PUT edit artwork' do
+    let(:updated_artwork) { { 
+      title: 'Updated Artwork 1',
+      year: 1983,
+      medium: 'Oil',
+      price: 100.00,
+      description: 'Updated 1-2',
+      collection: 'Updated Collection',
+      location: 'London Update',
+      height: 20,
+      width: 20,
+      depth: 5,
+      sold: false
+    }}
+
+    it 'PUT edits an artwork' do
+      post :create, params: { artwork:
+        {
+          title: 'Test Artwork 1',
+          year: 1984,
+          medium: 'Acrylic',
+          price: 1500.00,
+          description: 'Testing 1-2',
+          collection: 'Test Collection',
+          location: 'London',
+          height: 10,
+          width: 10,
+          depth: 3,
+          sold: true
+        } }
+      put :edit, params: { uid: Artwork.last.id, artwork: :updated_artwork }
+      artwork = Artwork.last
+      artwork.reload
+      updated_artwork.each do |key|
+        expect(artwork.attributes[key.to_s]).to eq(updated_artwork[key])
+      end
     end
   end
 end
