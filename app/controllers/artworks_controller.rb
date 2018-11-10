@@ -15,7 +15,7 @@ class ArtworksController < ApplicationController
   end
 
   def edit
-    @artwork = Artwork.find(params[:format])
+    @artwork = Artwork.find(params[:uid])
     if @artwork.uid == current_user.uid
       return @artwork
     else
