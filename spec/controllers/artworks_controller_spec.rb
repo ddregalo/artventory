@@ -3,11 +3,9 @@
 RSpec.describe ArtworksController, type: :controller do
   before(:each) do
     @user = User.create!(
-      {
-        email: 'user@test.com',
-        password: 'password',
-        password_confirmation: 'password'
-      }
+      email: 'user@test.com',
+      password: 'password',
+      password_confirmation: 'password'
     )
     sign_in @user
   end
@@ -51,7 +49,7 @@ RSpec.describe ArtworksController, type: :controller do
           width: 10,
           depth: 3,
           sold: true
-        }}
+        } }
       expect(Artwork.all.count).to eq(1)
     end
   end
@@ -71,26 +69,28 @@ RSpec.describe ArtworksController, type: :controller do
           width: 10,
           depth: 3,
           sold: true
-        }}
+        } }
       post :delete, params: { uid: Artwork.last.id }
       expect(Artwork.all.count).to eq(0)
     end
   end
 
   describe 'PUT edit artwork' do
-    let(:updated_artwork) { { 
-      title: 'Updated Artwork 1',
-      year: 1983,
-      medium: 'Oil',
-      price: 100.00,
-      description: 'Updated 1-2',
-      collection: 'Updated Collection',
-      location: 'London Update',
-      height: 20,
-      width: 20,
-      depth: 5,
-      sold: false
-    }}
+    let(:updated_artwork) do
+      {
+        title: 'Updated Artwork 1',
+        year: 1983,
+        medium: 'Oil',
+        price: 100.00,
+        description: 'Updated 1-2',
+        collection: 'Updated Collection',
+        location: 'London Update',
+        height: 20,
+        width: 20,
+        depth: 5,
+        sold: false
+      }
+    end
 
     it 'PUT edits an artwork' do
       post :create, params: { artwork:

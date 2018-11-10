@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Artwork < ApplicationRecord
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
@@ -22,7 +24,7 @@ class Artwork < ApplicationRecord
   end
 
   def self.search_artworks_main(query, uid)
-    self.search({
+    search(
       "query": {
         "bool": {
           "filter": {
@@ -32,51 +34,47 @@ class Artwork < ApplicationRecord
           },
           "must": {
             "multi_match": {
-              "query":    query, 
-              "fields": [ 
-                "title",
-                "medium",
-                "description",
-                "collection",
-                "location"
+              "query": query,
+              "fields": %w[
+                title
+                medium
+                description
+                collection
+                location
               ]
             }
           }
         }
       }
-    })
+    )
   end
 
   def self.search_artworks_sold(query, sold, uid)
-    self.search({
+    search(
       "query": {
         "bool": {
           "filter": {
             "bool": {
               "must": [
-                { "term": {"uid": uid}},
-                { "term": {"sold": sold}}
+                { "term": { "uid": uid } },
+                { "term": { "sold": sold } }
               ]
-            }          
+            }
           },
           "must": {
             "multi_match": {
-              "query":    query, 
-              "fields": [ 
-                "title",
-                "medium",
-                "description",
-                "collection",
-                "location"
+              "query": query,
+              "fields": %w[
+                title
+                medium
+                description
+                collection
+                location
               ]
             }
           }
         }
       }
-    })
+    )
   end
-   
-  
-
-
 end

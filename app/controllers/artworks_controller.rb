@@ -1,5 +1,6 @@
-class ArtworksController < ApplicationController
+# frozen_string_literal: true
 
+class ArtworksController < ApplicationController
   def index
     @artworks = Artwork.where(uid: current_user.uid)
   end
@@ -10,7 +11,7 @@ class ArtworksController < ApplicationController
 
   def create
     @artwork = Artwork.create(artwork_params)
-      .update(uid: current_user.uid)
+                      .update(uid: current_user.uid)
     redirect_to artworks_path
   end
 
@@ -19,7 +20,7 @@ class ArtworksController < ApplicationController
     if @artwork.uid == current_user.uid
       return @artwork
     else
-      raise "Unauthorized user access"
+      raise 'Unauthorized user access'
     end
   end
 
@@ -49,9 +50,8 @@ class ArtworksController < ApplicationController
       @artwork.destroy
       redirect_to artworks_path
     else
-      raise "Unauthorized Action"
+      raise 'Unauthorized Action'
     end
-
   end
 
   def search
@@ -59,17 +59,18 @@ class ArtworksController < ApplicationController
     option = params[:search_artworks].presence && params[:search_artworks][:option]
     if query && option
       case option
-        when "all"
-          @artworks = Artwork.search_artworks_main(query, current_user.uid)
-        when "sold"
-          @artworks = Artwork.search_artworks_sold(query, true, current_user.uid)
-        when "unsold"
-          @artworks = Artwork.search_artworks_sold(query, false, current_user.uid)
+      when 'all'
+        @artworks = Artwork.search_artworks_main(query, current_user.uid)
+      when 'sold'
+        @artworks = Artwork.search_artworks_sold(query, true, current_user.uid)
+      when 'unsold'
+        @artworks = Artwork.search_artworks_sold(query, false, current_user.uid)
       end
     end
   end
 
   private
+
   def artwork_params
     params.require(:artwork).permit(:title, :year, :medium, :price, :description, :collection, :location, :height, :width, :depth, :sold, :notes, :completed_month)
   end

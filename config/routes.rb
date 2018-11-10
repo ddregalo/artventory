@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  devise_for :user, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+  devise_for :user, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   get 'artworks/index'
   root 'artworks#index'
   get 'artworks/new'
