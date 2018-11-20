@@ -51,6 +51,17 @@ RSpec.describe ArtworksController, type: :controller do
           sold: true
         } }
       expect(Artwork.all.count).to eq(1)
+      expect(Artwork.all.first.title).to eq('Test Artwork 1')
+      expect(Artwork.all.first.year).to eq(1984)
+      expect(Artwork.all.first.medium).to eq('Acrylic')
+      expect(Artwork.all.first.price).to eq(1500.00)
+      expect(Artwork.all.first.description).to eq('Testing 1-2')
+      expect(Artwork.all.first.collection).to eq('Test Collection')
+      expect(Artwork.all.first.location).to eq('London')
+      expect(Artwork.all.first.height).to eq(10)
+      expect(Artwork.all.first.width).to eq(10)
+      expect(Artwork.all.first.depth).to eq(3)
+      expect(Artwork.all.first.sold).to eq(true)
     end
   end
 
