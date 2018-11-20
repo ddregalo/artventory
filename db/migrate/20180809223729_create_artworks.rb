@@ -4,7 +4,7 @@ class CreateArtworks < ActiveRecord::Migration[5.2]
   def change
     create_table :artworks do |t|
       t.string :title
-      t.date :year
+      t.integer :year
       t.string :medium
       t.integer :price
       t.text :description

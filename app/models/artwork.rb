@@ -7,7 +7,7 @@ class Artwork < ApplicationRecord
   settings do
     mappings dynamic: false do
       indexes :title, type: :text, analyzer: :english
-      indexes :year, type: :date
+      indexes :year, type: :integer
       indexes :medium, type: :text, analyzer: :english
       indexes :price, type: :float
       indexes :description, type: :text, analyzer: :english

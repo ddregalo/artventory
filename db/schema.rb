@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,44 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_181_015_192_212) do
+ActiveRecord::Schema.define(version: 2018_10_15_192212) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'artworks', force: :cascade do |t|
-    t.string 'title'
-    t.date 'year'
-    t.string 'medium'
-    t.integer 'price'
-    t.text 'description'
-    t.string 'collection'
-    t.string 'location'
-    t.integer 'height'
-    t.integer 'width'
-    t.integer 'depth'
-    t.boolean 'sold'
-    t.text 'notes'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'uid'
-    t.integer 'completed_month'
+  create_table "artworks", force: :cascade do |t|
+    t.string "title"
+    t.integer "year"
+    t.string "medium"
+    t.integer "price"
+    t.text "description"
+    t.string "collection"
+    t.string "location"
+    t.integer "height"
+    t.integer "width"
+    t.integer "depth"
+    t.boolean "sold"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "uid"
+    t.integer "completed_month"
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'email', default: '', null: false
-    t.string 'encrypted_password', default: '', null: false
-    t.string 'reset_password_token'
-    t.datetime 'reset_password_sent_at'
-    t.datetime 'remember_created_at'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'provider'
-    t.string 'uid'
-    t.string 'token'
-    t.integer 'expires_at'
-    t.boolean 'expires'
-    t.string 'refresh_token'
-    t.index ['email'], name: 'index_users_on_email', unique: true
-    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "provider"
+    t.string "uid"
+    t.string "token"
+    t.integer "expires_at"
+    t.boolean "expires"
+    t.string "refresh_token"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
 end
