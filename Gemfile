@@ -5,6 +5,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+# PWA
+gem 'serviceworker-rails'
+
 # Rspec Testing for Rails
 gem 'rspec'
 gem 'rspec-rails', '~> 3.7'
