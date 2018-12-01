@@ -5,6 +5,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+# Frontend Vue Dependecies
+gem 'webpacker'
+gem 'foreman'
+
 # Rspec Testing for Rails
 gem 'rspec'
 gem 'rspec-rails', '~> 3.7'
