@@ -89,6 +89,7 @@ group :test do
   gem 'chromedriver-helper'
   gem 'elasticsearch-extensions'
   gem 'rails-controller-testing'
+  gem 'simplecov', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
