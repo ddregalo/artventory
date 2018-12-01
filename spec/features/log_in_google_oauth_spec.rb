@@ -29,12 +29,11 @@ RSpec.describe 'Log In with Google OAuth', type: :feature do
     expect(page).to have_content('Could not authenticate you from GoogleOauth2')
   end
 
-  # scenario 'Sign in with existing google account' do
-  #   google_authenticate
-  #   sign_in_with_google_oauth
-  #   click_link 'SIGN OUT'
-  #   click_link 'SIGN IN'
-  #   click_link 'Sign in with GoogleOauth2'
-  #   expect(page).to have_content('NEW MOMENT')
-  # end
+  scenario 'Sign in with existing google account' do
+    google_authenticate
+    sign_in_with_google_oauth
+    click_link 'Sign Out'
+    click_link 'Sign in with GoogleOauth2'
+    expect(page).to have_content('Artventory V0.0.0.0.0.2a')
+  end
 end
