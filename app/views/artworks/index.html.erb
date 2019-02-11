@@ -5,21 +5,7 @@
 		<title>Artventory</title>
 	</head>
 	<body>
-		<h1>Artventory V0.0.0.0.0.2a</h1>
-
-		<% if user_signed_in? %>
-			<li>
-			<%= link_to('Sign Out', destroy_user_session_path, method: :delete) %>        
-			</li>
-		<% end %>
-
-		<%= link_to artworks_new_path do %>
-			<h2>New Artwork</h2>
-		<% end %>
-
-  <h2> Press <%= link_to 'here', search_artworks_path %> to search for artowkrs. </h2>
-
-
+    <h2> Press <%= link_to 'here', search_artworks_path %> to search for artowkrs. </h2>
 	  <p>Database entries go here:</h1>
 	  <% @artworks.each do |artwork| %>
 	    </br>
