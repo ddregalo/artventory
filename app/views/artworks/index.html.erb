@@ -6,21 +6,25 @@
 	</head>
 	<body>
     <h2> Press <%= link_to 'here', search_artworks_path %> to search for artowkrs. </h2>
-	  <p>Database entries go here:</h1>
+	  <h5>All Artworks</h5>
 	  <% @artworks.each do |artwork| %>
 	    </br>
-	    <div >
-	        <%= artwork.title %>
-	    </div>
-	    <div >
-	      <%= artwork.price %>
-	    </div>
-      <%= link_to artworks_edit_path(artwork) do %>
-  			<h2>Update Artwork</h2>
-  		<% end %>
-			<%= link_to artworks_delete_path(artwork) do %>
-				<h2>Delete Artwork</h2>
-			<% end %>
+			<div class="card">
+				<h5 class="card-header"><%= artwork.title %> (<%= artwork.year %>)</h5>
+				<div class="card-body">
+					<h5 class="card-title"><%= artwork.collection %></h5>
+					<p class="card-text"><%= artwork.medium %></p>
+					<p class="card-text"><%= artwork.height %> x <%= artwork.width %> cm</p>
+					<p class="card-text"><%= artwork.price %> GBP</p>
+				</div>
+			</div>
+			<%= link_to 'Edit', 
+				edit_artwork_path(artwork), 
+					method: :get %>
+			<%= link_to 'Delete', 
+				artwork_path(artwork), 
+					method: :delete, 
+					data: { confirm: 'Are you sure?' } %> 
 	  <% end %>
 	</body>
 </html>
