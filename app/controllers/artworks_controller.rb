@@ -16,9 +16,9 @@ class ArtworksController < ApplicationController
   end
 
   def edit
-    @artwork = Artwork.find(params[:uid])
+    @artwork = Artwork.find(params[:id])
     if @artwork.uid == current_user.uid
-      return @artwork
+      return edit_artwork_path
     else
       raise 'Unauthorized user access'
     end
@@ -44,8 +44,8 @@ class ArtworksController < ApplicationController
     redirect_to artworks_path
   end
 
-  def delete
-    @artwork = Artwork.find(params[:uid])
+  def destroy
+    @artwork = Artwork.find(params[:id])
     if @artwork.uid == current_user.uid
       @artwork.destroy
       redirect_to artworks_path
@@ -72,6 +72,20 @@ class ArtworksController < ApplicationController
   private
 
   def artwork_params
-    params.require(:artwork).permit(:title, :year, :medium, :price, :description, :collection, :location, :height, :width, :depth, :sold, :notes, :completed_month)
+    params.require(:artwork).permit(
+      :title,
+      :year,
+      :medium,
+      :price,
+      :description,
+      :collection,
+      :location,
+      :height,
+      :width,
+      :depth,
+      :sold,
+      :notes,
+      :completed_month
+    )
   end
 end
