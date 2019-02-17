@@ -4,6 +4,8 @@ class Artwork < ApplicationRecord
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
+  mount_uploader :image, ImageUploader
+
   settings do
     mappings dynamic: false do
       indexes :title, type: :text, analyzer: :english
