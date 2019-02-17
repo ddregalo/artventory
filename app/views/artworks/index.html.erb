@@ -5,12 +5,16 @@
 		<title>Artventory</title>
 	</head>
 	<body>
-    <h2> Press <%= link_to 'here', search_artworks_path %> to search for artowkrs. </h2>
+    <h3>User UID: <%= current_user.uid%></h3>
+	<h2> Press <%= link_to 'here', search_artworks_path %> to search for artowkrs. </h2>
 	  <h5>All Artworks</h5>
 	  <% @artworks.each do |artwork| %>
 	    </br>
 			<div class="card">
 				<h5 class="card-header"><%= artwork.title %> (<%= artwork.year %>)</h5>
+				<div class="card-image">
+						<%= image_tag artwork.image.thumb.url %>
+				</div>
 				<div class="card-body">
 					<h5 class="card-title"><%= artwork.collection %></h5>
 					<p class="card-text"><%= artwork.medium %></p>
