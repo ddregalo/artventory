@@ -27,6 +27,7 @@ class ArtworksController < ApplicationController
   def update
     @artwork = Artwork.find(params[:id])
     @artwork.update(
+      image: params[:image],
       title: params[:title],
       year: params[:year],
       medium: params[:medium],
@@ -73,6 +74,7 @@ class ArtworksController < ApplicationController
 
   def artwork_params
     params.require(:artwork).permit(
+      :image,
       :title,
       :year,
       :medium,

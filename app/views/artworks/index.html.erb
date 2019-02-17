@@ -12,9 +12,11 @@
 	    </br>
 			<div class="card">
 				<h5 class="card-header"><%= artwork.title %> (<%= artwork.year %>)</h5>
-				<div class="card-image">
-						<%= image_tag artwork.image.thumb.url %>
-				</div>
+				<% if !artwork.image.file.nil? %>
+					<div class="card-image">
+							<%= image_tag artwork.image.thumb.url %>
+					</div>
+				<% end %>
 				<div class="card-body">
 					<h5 class="card-title"><%= artwork.collection %></h5>
 					<p class="card-text"><%= artwork.medium %></p>

@@ -8,6 +8,7 @@ class Artwork < ApplicationRecord
 
   settings do
     mappings dynamic: false do
+      indexes :image, type: :file
       indexes :title, type: :text, analyzer: :english
       indexes :year, type: :integer
       indexes :medium, type: :text, analyzer: :english
