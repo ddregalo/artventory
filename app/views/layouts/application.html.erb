@@ -10,38 +10,40 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Artventory V0.0.0.0.0.2a</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/artworks/new">New Artwork</a>
+          </li>
+          <li class="nav-item">
 
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Artventory V0.0.0.0.0.2a</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/artworks/new">New Artwork</a>
-        </li>
-        <li class="nav-item">
-
-        </li>
-      </ul>
-      <%# <form class="form-inline my-2 my-lg-0"> %>
-        <%# <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> %>
-      <%# </form> %>
-        <% if user_signed_in? %>
-          <span class="nav-link btn btn-outline-secondary" style="text-align:right;"><%= link_to('Sign Out', destroy_user_session_path, method: :delete) %></span>        
-        <% end %>
+          </li>
+        </ul>
+        <%# <form class="form-inline my-2 my-lg-0"> %>
+          <%# <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> %>
+        <%# </form> %>
+          <% if user_signed_in? %>
+            <span class="nav-link btn btn-outline-secondary" style="text-align:right;"><%= link_to('Sign Out', destroy_user_session_path, method: :delete) %></span>        
+          <% end %>
+      </div>
+    </nav>
+    <div class="list-group">
+      <%= link_to 'Profile', artworks_path, action: :index, class: "list-group-item list-group-item-action main-list-item" %>
+      <%= link_to 'Artworks', artworks_path, action: :index, class: "list-group-item list-group-item-action main-list-item" %>
+      <%= link_to 'Settings', artworks_path, action: :index, class: "list-group-item list-group-item-action main-list-item" %>
     </div>
-  </nav>
-  <%= yield %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+    <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </body>
 </html>
