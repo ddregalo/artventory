@@ -4,8 +4,13 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :username%><br/>
+    <%= f.text_field :username, autofocus: true %>
+  </div>
+  
+  <div class="field">
     <%= f.label :profile_pic%><br/>
-    <%= f.file_field :avatar, autofocus: true %>
+    <%= f.file_field :avatar %>
   </div>
 
   <div class="field">
