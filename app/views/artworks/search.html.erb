@@ -30,6 +30,8 @@
         <% @artworks.each do |artwork| %>
           <tr>
             <td><%= artwork.title %></td>
+            <td><%= artwork.year %></td>
+            <td><%= artwork.collection %></td>
             <td><%= artwork.price %></td>
             <td><%= artwork.sold %></td>
             <td><%= link_to 'View', artwork_path(artwork.id) %></td>

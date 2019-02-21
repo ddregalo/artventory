@@ -23,14 +23,15 @@
 					<p class="card-text"><%= artwork.height %> x <%= artwork.width %> cm</p>
 					<p class="card-text"><%= artwork.price %> GBP</p>
 				</div>
+				<%= link_to 'Edit', 
+					edit_artwork_path(artwork), 
+						method: :get %>
+				<%= link_to 'Delete', 
+					artwork_path(artwork), 
+						method: :delete, 
+						data: { confirm: 'Are you sure?' } %> 
 			</div>
-			<%= link_to 'Edit', 
-				edit_artwork_path(artwork), 
-					method: :get %>
-			<%= link_to 'Delete', 
-				artwork_path(artwork), 
-					method: :delete, 
-					data: { confirm: 'Are you sure?' } %> 
+
 	  <% end %>
 	</body>
 </html>
