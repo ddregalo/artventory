@@ -5,7 +5,6 @@
 		<title>Artventory</title>
 	</head>
 	<body>
-    <h3>User UID: <%= current_user.uid%></h3>
 	<h2> Press <%= link_to 'here', search_artworks_path %> to search for artowkrs. </h2>
 	  <h5>All Artworks</h5>
 	  <% @artworks.each do |artwork| %>
