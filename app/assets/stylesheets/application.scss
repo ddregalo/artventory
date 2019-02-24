@@ -31,34 +31,28 @@
 }
 
 #sidebarCollapse {
+    width: 30px;
+    height: 30px;
+    background: #1d88a8cc;
+    color: #fff;
+}
+
+#hamburgerMenu {
     width: 40px;
     height: 40px;
     background: #1d88a8cc;
 }
 
-#sidebarCollapse span {
+#hamburgerMenu span {
     width: 80%;
     height: 2px;
     margin: 0 auto;
     display: block;
-    background: #1d88a8cc;
+    background: #fff;
     transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
 }
 
-#sidebarCollapse span:first-of-type {
-    /* rotate first one */
-    transform: rotate(45deg) translate(2px, 2px);
-}
-#sidebarCollapse span:nth-of-type(2) {
-    /* second one is not visible */
-    opacity: 0;
-}
-#sidebarCollapse span:last-of-type {
-    /* rotate third one */
-    transform: rotate(-45deg) translate(1px, -1px);
-}
-
-#sidebarCollapse.active span {
+#hamburgerMenu.active span {
     /* no rotation */
     transform: none;
     /* all bars are visible */
@@ -91,8 +85,8 @@
 }
 
 #sidebar.active {
-    margin-left: -250px;
-    transform: rotateY(100deg); /* Rotate sidebar vertically by 100 degrees. */
+    margin-left: -200px;
+    transform: rotateY(180deg); /* Rotate sidebar vertically by 100 degrees. */
 }
 
 #username {
