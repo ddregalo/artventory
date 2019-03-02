@@ -11,20 +11,22 @@
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div style="display:flex-inline;">
-          <div class="nav-menu-display">
-            <button type="button" id="sidebarCollapse" class="navbar-btn">
-              <i class="fas fa-times fa-2x close-icon-style"></i>
-            </button>
-          </div
-          <div class="nav-menu-display">
-            <button type="button" id="hamburgerMenu" class="navbar-btn">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-      </div>
+      <% if user_signed_in? %>
+        <div style="display:flex-inline;">
+            <div class="nav-menu-display">
+              <button type="button" id="sidebarCollapse" class="navbar-btn">
+                <i class="fas fa-times fa-2x close-icon-style"></i>
+              </button>
+            </div
+            <div class="nav-menu-display">
+              <button type="button" id="hamburgerMenu" class="navbar-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+        </div>
+      <% end %>
       <a class="navbar-brand title" href="/">Artventory V0.0.0.0.0.2a</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -57,26 +59,28 @@
         </div>
       </div>
     </nav>
-    <div class="wrapper">
-      <nav id="sidebar">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header">
-          <%# <h3 class="">MENU</h3> %>
-        </div>
-        <!-- Sidebar Links -->
-        <ul class="list-unstyled components">
-          <li class="active">
-            <%= link_to 'Profile', artworks_path, action: :index, class: "list-group-item list-group-item-action main-list-item" %>
-          </li>
-          <li>
-            <%= link_to 'Artworks', artworks_path, action: :index, class: "list-group-item list-group-item-action main-list-item" %>
-          </li>
-          <li>
-            <%= link_to 'Settings', artworks_path, action: :index, class: "list-group-item list-group-item-action main-list-item" %>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <% if user_signed_in? %>
+      <div class="wrapper">
+        <nav id="sidebar">
+          <!-- Sidebar Header -->
+          <div class="sidebar-header">
+            <%# <h3 class="">MENU</h3> %>
+          </div>
+          <!-- Sidebar Links -->
+          <ul class="list-unstyled components">
+            <li class="active">
+              <%= link_to 'Profile', artworks_path, action: :index, class: "list-group-item list-group-item-action main-list-item" %>
+            </li>
+            <li>
+              <%= link_to 'Artworks', artworks_path, action: :index, class: "list-group-item list-group-item-action main-list-item" %>
+            </li>
+            <li>
+              <%= link_to 'Settings', artworks_path, action: :index, class: "list-group-item list-group-item-action main-list-item" %>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    <% end %>
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
