@@ -19,6 +19,9 @@ gem 'elasticsearch-rails', git: 'git://github.com/elastic/elasticsearch-rails.gi
 # Add Bootstrap form
 gem 'bootstrap_form', '>= 4.0.0.alpha1'
 
+# Font Awesome for Icons
+gem "font-awesome-rails"
+
 # Add Bootstrap Bill
 gem 'bootstrap'
 
