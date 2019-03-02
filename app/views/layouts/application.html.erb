@@ -4,13 +4,27 @@
     <title>Artventory</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div style="display:flex-inline;">
+          <div class="nav-menu-display">
+            <button type="button" id="sidebarCollapse" class="navbar-btn">
+              <i class="fas fa-times fa-2x close-icon-style"></i>
+            </button>
+          </div
+          <div class="nav-menu-display">
+            <button type="button" id="hamburgerMenu" class="navbar-btn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+      </div>
       <a class="navbar-brand title" href="/">Artventory V0.0.0.0.0.2a</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -47,10 +61,7 @@
       <nav id="sidebar">
         <!-- Sidebar Header -->
         <div class="sidebar-header">
-          <h3 class="">MENU</h3>
-          <div>
-            <button type="button" id="sidebarCollapse" class="navbar-btn">x</button>
-          <div>
+          <%# <h3 class="">MENU</h3> %>
         </div>
         <!-- Sidebar Links -->
         <ul class="list-unstyled components">
@@ -65,13 +76,6 @@
           </li>
         </ul>
       </nav>
-      <div>
-        <button type="button" id="hamburgerMenu" class="navbar-btn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      <div>
     </div>
     <%= yield %>
     <p class="notice"><%= notice %></p>

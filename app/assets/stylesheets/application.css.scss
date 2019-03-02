@@ -19,34 +19,50 @@
 *= require rails_boostrap_forms
 */
 
+/*
+ *= require font-awesome
+ */
+
+.close-icon-style {
+    color: rgb(61, 53, 53);
+    text-align: center;
+    margin-top: 4px;
+    margin-left: 1px;
+}
+
+.nav-menu-display {
+    padding-right: 20px;
+}
+
+.sidebar-header {
+    letter-spacing: 3px;
+    margin: 5px;
+    height: 10px;
+}
 
 .user-nav {
     text-align: right;
     display: inline-block;
 }
 
-#sign-out {
-    color: #f5f5f5;
-    outline: 5px #f5f5f5;
-}
-
-#sidebarCollapse {
-    width: 30px;
-    height: 30px;
-    background: #1d88a8cc;
-    color: #fff;
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    perspective: 1500px; 
 }
 
 #hamburgerMenu {
-    width: 40px;
-    height: 40px;
-    background: #1d88a8cc;
+    width: 50px;
+    height: 50px;
+    background: #2091b4a8;
+    margin-right: 20px;
 }
 
 #hamburgerMenu span {
     width: 80%;
-    height: 2px;
+    height: 3px;
     margin: 0 auto;
+    border-radius: 30%;
     display: block;
     background: #fff;
     transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
@@ -60,11 +76,23 @@
     margin: 5px auto;
 }
 
-.wrapper {
-    display: flex;
-    align-items: stretch;
-    perspective: 1500px; 
+#sign-out {
+    color: #f5f5f5;
+    outline: 5px #f5f5f5;
 }
+
+#sidebarCollapse {
+    margin: 0;
+    width: 50px;
+    height: 50px;
+    background: #d2d4d4ce;
+    color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    vertical-align:middle;
+}
+
+
 
 #sidebar {
     background: rgb(255, 231, 179);

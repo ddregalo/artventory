@@ -3,14 +3,18 @@ ready = function() {
         
     $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
-        $(this).toggleClass('active');
-        $('#hamburgerMenu').toggleClass('active').fadeIn(800);
+        $(this).fadeOut('fast', () => {
+            $(this).toggleClass('active');
+            $('#hamburgerMenu').toggleClass('active').fadeIn('fast');
+        }); 
     });
     
     $('#hamburgerMenu').on('click', function () {
         $('#sidebar').toggleClass('active');
-        $('#sidebarCollapse').toggleClass('active');  
-        $(this).toggleClass('active').fadeOut(400);
+        $(this).toggleClass('active').fadeOut('fast', () => {
+            $('#sidebarCollapse').fadeIn('fast');
+            $('#sidebarCollapse').toggleClass('active');  
+        });
     });
 };
 
