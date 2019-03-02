@@ -16,6 +16,9 @@ gem 'simplecov'
 gem 'elasticsearch-model', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
 gem 'elasticsearch-rails', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
 
+# Prawn PDF
+gem 'prawn'
+
 # Add Bootstrap form
 gem 'bootstrap_form', '>= 4.0.0.alpha1'
 
