@@ -5,6 +5,32 @@
     <title></title>
   </head>
   <body>
-    <%= link_to 'Generate PDF', generate_pdf_path, method: :post %>
+  	<% @artworks.each do |artwork| %>
+	    </br>
+			<div class="card">
+				<h5 class="card-header"><%= artwork.title %> (<%= artwork.year %>)</h5>
+				<% if !artwork.image.file.nil? %>
+					<div class="card-image">
+							<%= image_tag artwork.image.thumb.url %>
+					</div>
+				<% end %>
+				<div class="card-body">
+					<h5 class="card-title"><%= artwork.collection %></h5>
+					<p class="card-text"><%= artwork.medium %></p>
+					<p class="card-text"><%= artwork.height %> x <%= artwork.width %> cm</p>
+					<p class="card-text"><%= artwork.price %> GBP</p>
+				</div>
+				<%= link_to 'Edit', 
+					edit_artwork_path(artwork), 
+						method: :get %>
+				<%= link_to 'Delete', 
+					artwork_path(artwork), 
+						method: :delete, 
+						data: { confirm: 'Are you sure?' } %> 
+			</div>
+
+	  <% end %>
+    <%= link_to 'Generate PDF', generate_pdf_path, method: :POST %>
+		
   </body>
 </html>
