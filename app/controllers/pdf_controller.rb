@@ -3,35 +3,28 @@ class PdfController < ApplicationController
     @artworks = Artwork.where(uid: current_user.uid)
   end
 
-
-
   def generate_pdf
-
     Prawn::Document.generate(current_user.username + Time.new.to_s + ".pdf") do |pdf|
       pdf.formatted_text [ { :text => "A portfolio example\n\n", :size => 20} ]
       artworks = Artwork.where(uid: current_user.uid)
-      
-      artworks.each do |artwork|
+      params[":ids"].each do |id|
+        artwork = artworks.find(id)
         pdf.bounding_box([50, pdf.cursor], :width => 400, :height => 350) do
           pdf.stroke_bounds
           pdf.formatted_text [ { :text => "Title: " + artwork.title, :size => 16 } ]
           pdf.formatted_text [ { :text => "Medium: " + artwork.medium, :size => 12 } ]
           pdf.formatted_text [ { :text => "Desc: " + artwork.description, :size => 12 } ]
           pdf.image "#{Rails.root}/public" + artwork.image.url, :width => 50, :position => :right
-         end
+        end
         title_position = pdf.cursor
       end
     end
-    puts "************"
-    puts params[:artwork_ids]
-    puts "************"
-
     redirect_to artworks_path
   end
+
   private
   def pdf_params
-    params.permit(:artwork_ids.id => [])
-    params.require(:artwork_ids).permit(:id => [])
+    params.permit(:ids)
   end
 end
 

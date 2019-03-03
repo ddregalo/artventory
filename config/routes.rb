@@ -17,5 +17,4 @@ Rails.application.routes.draw do
     end
   end
   post "generate_pdf", to: 'pdf#generate_pdf'
-  post "pdf/new"
 end
