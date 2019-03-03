@@ -6,11 +6,12 @@ class PdfController < ApplicationController
 
   def generate_pdf
     filename = current_user.username + Time.new.to_s + ".pdf"
-    Prawn::Document.generate(filename) do |pdf|
+    filepath = "" + filename
+    Prawn::Document.generate(filepath) do |pdf|
       portfolio(pdf)
     end
     redirect_to artworks_path
-    UserMailer.with(user: current_user).welcome_email.deliver_later
+    UserMailer.with(user: current_user, filename: filename, filepath: filepath).portfolio_email.deliver_later
 
   end
 
