@@ -3,7 +3,10 @@ class PdfController < ApplicationController
     @artworks = Artwork.where(uid: current_user.uid)
   end
 
+
+
   def generate_pdf
+
     Prawn::Document.generate(current_user.username + Time.new.to_s + ".pdf") do |pdf|
       pdf.formatted_text [ { :text => "A portfolio example\n\n", :size => 20} ]
       artworks = Artwork.where(uid: current_user.uid)
@@ -19,6 +22,16 @@ class PdfController < ApplicationController
         title_position = pdf.cursor
       end
     end
+    puts "************"
+    puts params[:artwork_ids]
+    puts "************"
+
     redirect_to artworks_path
   end
+  private
+  def pdf_params
+    params.permit(:artwork_ids.id => [])
+    params.require(:artwork_ids).permit(:id => [])
+  end
 end
+
