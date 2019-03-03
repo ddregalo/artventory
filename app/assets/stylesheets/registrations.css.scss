@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+h2 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    padding-top: 15px;
+    font-family: 'Open Sans';
+
+}
+
+.field-input {
+    float: left;
+    padding-left: 20px;
+}
+
+.field-label {
+    font-family: 'Open Sans';
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-bottom: 0;
+    float: left;
+}
+
+.form-fields {
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.field {
+    padding: 40px;
+}
