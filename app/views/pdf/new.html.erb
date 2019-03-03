@@ -11,7 +11,6 @@
 			<div class="card">
 				<h5 class="card-header">
 					<%= artwork.title %> (<%= artwork.year %>) 	
-		
 					<%= check_box_tag ":ids[]", artwork.id %>
 				</h5>
 				<% if !artwork.image.file.nil? %>
@@ -31,12 +30,10 @@
 				<%= link_to 'Delete', 
 					artwork_path(artwork), 
 						method: :delete, 
-						data: { confirm: 'Are you sure?' } %> 
-			</div>
+						data: { confirm: 'Are you sure?' } %>
+			</div> 
 		<% end %>
-		<%= submit_tag("Generate PDF", :id => "submit") %>
+	<%= submit_tag("Generate PDF", :id => "submit") %>
 	<% end %>
-
-</form>
   </body>
 </html>
