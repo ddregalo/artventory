@@ -7,8 +7,8 @@ class PdfController < ApplicationController
     Prawn::Document.generate(current_user.username + Time.new.to_s + ".pdf") do |pdf|
       pdf.formatted_text [ { :text => "A portfolio example\n\n", :size => 20} ]
       artworks = Artwork.where(uid: current_user.uid)
-      params[":ids"].each do |i|
-        artwork = artworks.find(i)
+      params[":ids"].each do |id|
+        artwork = artworks.find(id)
         pdf.bounding_box([50, pdf.cursor], :width => 400, :height => 350) do
           pdf.stroke_bounds
           pdf.formatted_text [ { :text => "Title: " + artwork.title, :size => 16 } ]
@@ -22,7 +22,6 @@ class PdfController < ApplicationController
     redirect_to artworks_path
   end
 
-  
   private
   def pdf_params
     params.permit(:ids)
