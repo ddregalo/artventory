@@ -10,6 +10,8 @@ class PdfController < ApplicationController
       portfolio(pdf)
     end
     redirect_to artworks_path
+    UserMailer.with(user: current_user).welcome_email.deliver_later
+
   end
 
   private
