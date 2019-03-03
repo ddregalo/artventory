@@ -19,6 +19,12 @@ gem 'elasticsearch-rails', git: 'git://github.com/elastic/elasticsearch-rails.gi
 # Prawn PDF
 gem 'prawn'
 
+# Materialize-Sass for Google Material Design
+gem 'materialize-sass', '~> 1.0.0'
+
+# Material Icons - https://github.com/Angelmmiguel/material_icons
+gem 'material_icons'
+
 # Add Bootstrap form
 gem 'bootstrap_form', '>= 4.0.0.alpha1'
 

@@ -12,6 +12,7 @@
  *
  */
  @import 'bootstrap';
+ @import 'materialize';
  @import './artworks.scss';
  @import './home.scss';
  @import './devise.css.scss';
@@ -23,6 +24,10 @@
 /*
  *= require font-awesome
  */
+
+/*
+*= require material_icons
+*/
 
  ::-webkit-input-placeholder {
     text-align: center;
