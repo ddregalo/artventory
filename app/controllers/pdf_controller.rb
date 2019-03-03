@@ -17,7 +17,7 @@ class PdfController < ApplicationController
           pdf.formatted_text [ { :text => "Title: " + artwork.title, :size => 16 } ]
           pdf.formatted_text [ { :text => "Medium: " + artwork.medium, :size => 12 } ]
           pdf.formatted_text [ { :text => "Desc: " + artwork.description, :size => 12 } ]
-          pdf.image "#{Rails.root}/public" + artwork.image.url, :width => 300, :position => :right
+          pdf.image "#{Rails.root}/public" + artwork.image.url, :width => 50, :position => :right
          end
         title_position = pdf.cursor
       end
