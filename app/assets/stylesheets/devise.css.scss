@@ -4,14 +4,21 @@ h2 {
     text-transform: uppercase;
     letter-spacing: 3px;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 40px;
     font-family: 'Open Sans';
 
 }
 
+.box-input {
+    border-radius: 25px;
+    border: 2px solid rgb(129, 124, 124);
+    width: 200px;
+    height: 30px;    
+}
+
 .field-input {
-    float: left;
-    padding-left: 20px;
+    float: center;
+    text-align: center;
 }
 
 .field-label {
@@ -29,5 +36,10 @@ h2 {
 }
 
 .field {
-    padding: 40px;
+    padding: 15px;
+}
+
+#remember-me {
+    text-align: center;
+    text-transform: capitalize;
 }
