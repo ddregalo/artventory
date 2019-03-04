@@ -11,11 +11,12 @@
  * It is generally better to create a new file per style scope.
  *
  */
- @import 'bootstrap';
+
+//  @import 'bootstrap';
  @import 'materialize';
  @import './artworks.scss';
  @import './home.scss';
- @import './devise.css.scss';
+ @import './devise.scss';
 
 /*
 *= require rails_boostrap_forms
@@ -28,6 +29,21 @@
 /*
 *= require material_icons
 */
+
+$primary-color: color("materialize-red", "lighten-2") !default;
+$primary-color-light: false !default;
+$primary-color-dark: false !default;
+@if not $primary-color-light {
+$primary-color-light: lighten($primary-color, 15%);
+}
+@if not $primary-color-dark {
+$primary-color-dark: darken($primary-color, 15%);
+}
+$secondary-color: color("teal", "lighten-1") !default;
+$success-color: color("green", "base") !default;
+$error-color: color("red", "base") !default;
+
+$link-color: color("light-blue", "darken-1") !default;
 
  ::-webkit-input-placeholder {
     text-align: center;
@@ -45,21 +61,34 @@
     text-align: center; 
  }
 
+nav.nav-wrapper ul {
+    text-align: center;
+}
+nav.nav-wrapper ul li {
+    display: inline;
+}
+nav.nav-wrapper ul li a {
+    display: inline-block;
+}
+
 .close-icon-style {
     color: rgb(61, 53, 53);
     text-align: center;
-    margin-top: 4px;
-    margin-left: 1px;
 }
 
-.nav-menu-display {
-    padding-right: 20px;
+.menu-display {
+    padding: 0 8px 0 20px;
+    vertical-align: middle;
 }
 
 .sidebar-header {
     letter-spacing: 3px;
     margin: 5px;
     height: 10px;
+}
+
+.title {
+    display: inline-flex;
 }
 
 .user-nav {
@@ -104,14 +133,11 @@
 }
 
 #sidebarCollapse {
-    margin: 0;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background: #d2d4d4ce;
-    color: #fff;
     border-radius: 50%;
     overflow: hidden;
-    vertical-align:middle;
 }
 
 #sidebar {
